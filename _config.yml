@@ -1,0 +1,27 @@
+title:       "Rands & Sense"
+description: "Practical guides to saving and investing in SA"
+author:      "Pakama Bangiso"
+
+# GitHub Pages compatible setup
+remote_theme: jekyll/minima
+plugins:      
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-remote-theme
+
+minima:
+  skin: dark
+
+# Pagination v2 configuration
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+
+url:  "https://nomsa.dev" 
