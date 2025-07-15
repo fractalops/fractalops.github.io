@@ -12,7 +12,7 @@ Making financial sense of your rands, one guide at a time. Whether you're starti
 ## Start Here 🚀
 
 <div class="highlight-box">
-<strong>New to personal finance?</strong> Begin with our <a href="/2025/07/15/emergency-fund-guide.html">Emergency Fund Guide</a> - the foundation of financial security.
+<strong>New to personal finance?</strong> Begin with our <a href="/saving/emergency-fund/2025/07/15/emergency-fund-guide.html">Emergency Fund Guide</a> - the foundation of financial security.
 </div>
 
 ## What You'll Learn
