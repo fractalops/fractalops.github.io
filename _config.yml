@@ -3,25 +3,33 @@ description: "Practical guides to saving and investing in SA"
 author:      "Pakama Bangiso"
 
 # GitHub Pages compatible setup
-remote_theme: jekyll/minima
 plugins:      
   - jekyll-feed
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-remote-theme
 
-minima:
-  skin: dark
+# Simple pagination (GitHub Pages compatible)
+paginate: 5
+paginate_path: "/page:num/"
 
-# Pagination v2 configuration
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: '/page/:num/'
-  title: ':title - page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+# Exclude documentation files from the site
+exclude:
+  - CHANGELOG.md
+  - DEPLOYMENT.md
+  - CONTENT_GUIDE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - scripts/
+  - .gitignore
+  - VERSION
+  - assets/README.md
 
-url:  "https://nomsa.dev" 
+# Only include specific pages in header navigation
+header_pages:
+  - index.md
+
+# url will be set automatically by GitHub Pages
+# Format: https://USERNAME.github.io/REPOSITORY_NAME 

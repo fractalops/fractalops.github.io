@@ -4,7 +4,7 @@
 
 A professional financial education blog by **Pakama Bangiso**, designed to help South Africans make sense of their money with local, actionable advice.
 
-**🌐 Live Site:** https://nomsa.dev
+**🌐 Live Site:** Will be available at `https://YOUR_USERNAME.github.io/REPOSITORY_NAME` after deployment
 
 ## ✨ Features
 

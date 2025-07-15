@@ -1,7 +1,6 @@
 ---
-layout: home
+layout: default
 title: "Rands & Sense"
-paginate: true
 ---
 
 # Welcome to Rands & Sense 💰
@@ -47,4 +46,18 @@ Making financial sense of your rands, one guide at a time. Whether you're starti
 
 ---
 
-*Ready to take control of your financial future? Start with any post below, or jump straight to our beginner's guide on emergency funds.* 
+## Latest Posts
+
+<div class="post-list">
+{% for post in site.posts %}
+  <article class="post-preview">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+    <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+    {% if post.excerpt %}
+      <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+    {% endif %}
+  </article>
+{% endfor %}
+</div>
+
+*Ready to take control of your financial future? Start with any post above, or jump straight to our beginner's guide on emergency funds.* 
