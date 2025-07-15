@@ -46,4 +46,4 @@ Ready to take control of your financial future? Let's make every rand count.
 
 ---
 
-*Next up: [Building Your Emergency Fund](/2025/07/15/emergency-fund-guide.html) - the foundation every South African needs.* 
+*Next up: [Building Your Emergency Fund](/saving/emergency-fund/2025/07/15/emergency-fund-guide.html) - the foundation every South African needs.* 
