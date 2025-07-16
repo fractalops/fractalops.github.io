@@ -2,10 +2,9 @@
 
 This is a fun project & a professional financial education blog for a friend **Pakama Bangiso**, will eventually move it from here.
 
-**🌐 Live Site:** available at fractalops.github.io
+**🌐 Live Site:** available at [fractalops.github.io](https://fractalops.github.io)
 
 
-## 🚀 Quick Start (Development)
 
 ---
 
