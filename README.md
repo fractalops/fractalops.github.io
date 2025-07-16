@@ -1,10 +1,8 @@
 # Rands & Sense 💰
 
-> **Practical guides to saving and investing in South Africa**
+This is a fun project & a professional financial education blog for a friend **Pakama Bangiso**, will eventually move it from here.
 
-A professional financial education blog by **Pakama Bangiso**, designed to help South Africans make sense of their money with local, actionable advice.
-
-**🌐 Live Site:** Will be available at `https://YOUR_USERNAME.github.io/REPOSITORY_NAME` after deployment
+**🌐 Live Site:** available at fractalops.github.io
 
 
 ## 🚀 Quick Start (Development)
