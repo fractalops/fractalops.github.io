@@ -1,48 +1,35 @@
 ---
 layout: default
-title: "Rands & Sense"
+title: "mfundo.cloud"
 ---
 
-# Welcome to Rands & Sense 💰
+# Welcome to mfundo.cloud ☁️
 
-**Practical guides to saving and investing in South Africa**
+**Engineering insights from the cloud**
 
-Making financial sense of your rands, one guide at a time. Whether you're starting your first job in Joburg, raising a family in Cape Town, or planning retirement in Durban, we've got practical advice that works for real South Africans.
+Sharing practical knowledge and experiences from cloud infrastructure, system engineering, and software development. Real-world solutions to complex technical challenges.
 
-## Start Here 🚀
+## What You'll Find Here
 
-<div class="highlight-box">
-<strong>New to personal finance?</strong> Begin with our <a href="/saving/emergency-fund/2025/07/15/emergency-fund-guide.html">Emergency Fund Guide</a> - the foundation of financial security.
-</div>
+**☁️ Cloud Infrastructure**
+- AWS, Azure, GCP patterns and architectures
+- Cost optimization strategies
+- Infrastructure as Code best practices
 
-## What You'll Learn
+**⚙️ System Engineering**
+- Scalability and performance optimization
+- Reliability engineering principles
+- Monitoring and observability
 
-**💡 Smart Saving**
-- Emergency funds that actually work
-- Budgeting without the stress
-- Tax-free savings account strategies
+**💻 Software Engineering**
+- Distributed systems design
+- Development practices and patterns
+- Architecture decisions and trade-offs
 
-**📈 Investing Made Simple**
-- JSE investing for beginners
-- Unit trusts vs ETFs explained
-- Retirement annuity basics
-
-**🏦 Banking & Credit**
-- Choosing the right bank accounts
-- Understanding your credit score
-- Home loan preparation
-
-**🛡️ Protection & Planning**
-- Medical aid vs gap cover
-- Life insurance essentials
-- Estate planning basics
-
-## Why Rands & Sense?
-
-- **Local Focus**: All advice tailored for South African financial products and regulations
-- **Real Examples**: Actual Rand amounts and scenarios you'll recognize
-- **No Jargon**: Complex concepts explained in plain English
-- **Actionable**: Every post includes specific steps you can take this week
+**🔧 DevOps & SRE**
+- CI/CD pipeline optimization
+- Automation and tooling
+- Incident response and post-mortems
 
 ---
 
@@ -60,4 +47,4 @@ Making financial sense of your rands, one guide at a time. Whether you're starti
 {% endfor %}
 </div>
 
-*Ready to take control of your financial future? Start with any post above, or jump straight to our beginner's guide on emergency funds.* 
+*Building reliable systems, one post at a time.* 

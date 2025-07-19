@@ -1,8 +1,8 @@
-# Rands & Sense 💰
+# mfundo.cloud ☁️
 
-This is a fun project & a professional financial education blog for a friend **Pakama Bangiso**, will eventually move it from here.
+A personal engineering blog focused on cloud infrastructure, system engineering, and software development insights.
 
-**🌐 Live Site:** available at [fractalops.github.io](https://fractalops.github.io)
+**🌐 Live Site:** available at [mfundo.cloud](https://mfundo.cloud)
 
 
 
@@ -98,7 +98,7 @@ To preview your site locally with live reload:
 **Creating content:**
 1. Use `./scripts/new-post.sh "Post Title"` to create new posts
 2. Follow the template and guidelines in `CONTENT_GUIDE.md`
-3. Focus on South African financial topics with local examples
-4. Always include actionable steps and Rand amounts
+3. Focus on engineering topics: cloud infrastructure, system design, software development
+4. Include practical examples and real-world solutions
 
 ---
