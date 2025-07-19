@@ -31,5 +31,5 @@ exclude:
 header_pages:
   - index.md
 
-# url will be set automatically by GitHub Pages
-# Format: https://USERNAME.github.io/REPOSITORY_NAME 
+url: "https://mfundo.cloud"
+baseurl: "" 
