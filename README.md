@@ -2,7 +2,7 @@
 
 A personal engineering blog focused on cloud infrastructure, system engineering, and software development insights.
 
-**🌐 Live Site:** available at [mfundo.cloud](https://mfundo.cloud)
+**🌐 Live Site:** available at [mfundo.cloud](https://blog.mfundo.cloud)
 
 
 
