@@ -1,0 +1,20 @@
+---
+---
+
+/* Additional MathJax fixes for edge cases */
+.MathJax_SVG {
+  display: inline !important;
+  vertical-align: baseline !important;
+}
+
+.MathJax_SVG_Display {
+  display: block !important;
+  text-align: center !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* Ensure MathJax doesn't interfere with code blocks */
+pre .MathJax,
+code .MathJax {
+  display: none !important;
+}
