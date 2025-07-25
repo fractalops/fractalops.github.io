@@ -21,6 +21,11 @@ kramdown:
     block:
       line_numbers: false
 
+# SASS configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+
 # Simple pagination (GitHub Pages compatible)
 paginate: 5
 paginate_path: "/page:num/"
