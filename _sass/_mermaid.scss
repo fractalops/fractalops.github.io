@@ -1,0 +1,530 @@
+// =============================================================================
+// MERMAID DIAGRAMS
+// =============================================================================
+
+// Mermaid Container
+.mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: $space-2xl 0;
+  padding: $space-xl;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: $radius-lg;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-height: 200px;
+  position: relative;
+  box-shadow: $shadow-sm;
+
+  // Loading state
+  &.loading {
+    &::before {
+      content: 'Loading diagram...';
+      color: var(--text-muted);
+      font-size: $text-sm;
+      font-style: italic;
+    }
+  }
+
+  // Error state
+  &.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+    color: #ef4444;
+
+    &::before {
+      content: 'Error rendering diagram';
+      font-size: $text-sm;
+    }
+  }
+
+  // Responsive behavior
+  @media (max-width: $tablet) {
+    padding: $space-lg;
+    margin: $space-xl 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $space-md;
+    border-radius: $radius-md;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+// Mermaid Diagram Wrapper
+.mermaid-wrapper {
+  position: relative;
+  margin: $space-2xl 0;
+
+  .diagram-title {
+    text-align: center;
+    font-size: $text-lg;
+    font-weight: $font-semibold;
+    color: var(--text-primary);
+    margin-bottom: $space-lg;
+  }
+
+  .diagram-description {
+    text-align: center;
+    font-size: $text-sm;
+    color: var(--text-secondary);
+    margin-top: $space-lg;
+    line-height: $leading-relaxed;
+  }
+
+  // Diagram controls
+  .diagram-controls {
+    position: absolute;
+    top: $space-sm;
+    right: $space-sm;
+    display: flex;
+    gap: $space-xs;
+    opacity: 0;
+    transition: opacity $transition-fast;
+    z-index: 10;
+
+    .control-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: $radius-sm;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all $transition-fast;
+
+      &:hover {
+        background-color: var(--hover-bg);
+        color: var(--accent-blue);
+        border-color: var(--accent-blue);
+      }
+
+      .icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &:hover .diagram-controls {
+    opacity: 1;
+  }
+}
+
+// Mermaid Theme Overrides for Dark Mode
+.mermaid {
+  // Flowchart styling
+  .node {
+    fill: var(--bg-tertiary) !important;
+    stroke: var(--border-light) !important;
+    stroke-width: 2px !important;
+    color: var(--text-primary) !important;
+
+    &.default {
+      fill: var(--bg-secondary) !important;
+    }
+
+    &.primary {
+      fill: var(--accent-blue) !important;
+      color: white !important;
+    }
+
+    &.secondary {
+      fill: var(--bg-tertiary) !important;
+      stroke: var(--accent-blue) !important;
+    }
+  }
+
+  // Text styling
+  .nodeLabel,
+  .edgeLabel {
+    color: var(--text-primary) !important;
+    fill: var(--text-primary) !important;
+    font-family: $font-family-base !important;
+    font-size: $text-sm !important;
+    font-weight: $font-medium !important;
+  }
+
+  // Edge/Arrow styling
+  .edgePath path {
+    stroke: var(--border-light) !important;
+    stroke-width: 2px !important;
+    fill: none !important;
+  }
+
+  .arrowheadPath {
+    fill: var(--border-light) !important;
+    stroke: var(--border-light) !important;
+  }
+
+  // Sequence diagram styling
+  .actor {
+    fill: var(--bg-tertiary) !important;
+    stroke: var(--border-light) !important;
+    stroke-width: 2px !important;
+  }
+
+  .actor-line {
+    stroke: var(--border-color) !important;
+    stroke-width: 1px !important;
+    stroke-dasharray: 5,5 !important;
+  }
+
+  .messageLine0,
+  .messageLine1 {
+    stroke: var(--accent-blue) !important;
+    stroke-width: 2px !important;
+  }
+
+  .messageText {
+    fill: var(--text-primary) !important;
+    font-family: $font-family-base !important;
+    font-size: $text-sm !important;
+  }
+
+  .activation0,
+  .activation1,
+  .activation2 {
+    fill: var(--accent-blue) !important;
+    opacity: 0.3 !important;
+  }
+
+  // Gantt chart styling
+  .section0,
+  .section1,
+  .section2,
+  .section3 {
+    fill: var(--bg-tertiary) !important;
+    opacity: 0.8 !important;
+  }
+
+  .task0,
+  .task1,
+  .task2,
+  .task3 {
+    fill: var(--accent-blue) !important;
+    stroke: var(--border-light) !important;
+    stroke-width: 1px !important;
+  }
+
+  .taskText0,
+  .taskText1,
+  .taskText2,
+  .taskText3 {
+    fill: var(--text-primary) !important;
+    font-family: $font-family-base !important;
+    font-size: $text-xs !important;
+  }
+
+  .grid .tick {
+    stroke: var(--border-color) !important;
+    stroke-width: 1px !important;
+    opacity: 0.5 !important;
+  }
+
+  // Git graph styling
+  .commit-id,
+  .commit-msg,
+  .branch-label {
+    fill: var(--text-primary) !important;
+    font-family: $font-family-mono !important;
+    font-size: $text-xs !important;
+  }
+
+  .commit {
+    stroke: var(--border-light) !important;
+    stroke-width: 2px !important;
+    fill: var(--bg-tertiary) !important;
+  }
+
+  .branch {
+    stroke: var(--accent-blue) !important;
+    stroke-width: 2px !important;
+  }
+
+  // Class diagram styling
+  .classBox {
+    fill: var(--bg-tertiary) !important;
+    stroke: var(--border-light) !important;
+    stroke-width: 2px !important;
+  }
+
+  .classText {
+    fill: var(--text-primary) !important;
+    font-family: $font-family-base !important;
+    font-size: $text-sm !important;
+  }
+
+  .relation {
+    stroke: var(--border-light) !important;
+    stroke-width: 2px !important;
+    fill: none !important;
+  }
+
+  // State diagram styling
+  .state {
+    fill: var(--bg-tertiary) !important;
+    stroke: var(--border-light) !important;
+    stroke-width: 2px !important;
+  }
+
+  .stateText {
+    fill: var(--text-primary) !important;
+    font-family: $font-family-base !important;
+    font-size: $text-sm !important;
+  }
+
+  .transition {
+    stroke: var(--accent-blue) !important;
+    stroke-width: 2px !important;
+    fill: none !important;
+  }
+
+  // Pie chart styling
+  .pieCircle {
+    stroke: var(--border-light) !important;
+    stroke-width: 2px !important;
+  }
+
+  .pieTitleText {
+    fill: var(--text-primary) !important;
+    font-family: $font-family-base !important;
+    font-size: $text-lg !important;
+    font-weight: $font-semibold !important;
+  }
+
+  .slice {
+    opacity: 0.8 !important;
+  }
+
+  .pieOuterCircle {
+    stroke: var(--border-color) !important;
+    stroke-width: 1px !important;
+    fill: none !important;
+  }
+
+  // Journey diagram styling
+  .journey-section {
+    fill: var(--bg-tertiary) !important;
+    stroke: var(--border-light) !important;
+  }
+
+  .journey-task {
+    fill: var(--accent-blue) !important;
+    stroke: var(--border-light) !important;
+  }
+
+  .journey-actor {
+    fill: var(--bg-secondary) !important;
+    stroke: var(--border-light) !important;
+  }
+
+  // Background and grid
+  .background {
+    fill: transparent !important;
+  }
+
+  .grid-line {
+    stroke: var(--border-color) !important;
+    stroke-width: 1px !important;
+    opacity: 0.3 !important;
+  }
+
+  // Labels and titles
+  .titleText {
+    fill: var(--text-primary) !important;
+    font-family: $font-family-base !important;
+    font-size: $text-xl !important;
+    font-weight: $font-bold !important;
+  }
+
+  .sectionTitle {
+    fill: var(--text-secondary) !important;
+    font-family: $font-family-base !important;
+    font-size: $text-base !important;
+    font-weight: $font-semibold !important;
+  }
+}
+
+// Mermaid Fullscreen Modal
+.mermaid-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-base;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: $radius-lg;
+    padding: $space-xl;
+    position: relative;
+    overflow: auto;
+
+    .close-button {
+      position: absolute;
+      top: $space-md;
+      right: $space-md;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: $text-xl;
+      cursor: pointer;
+      padding: $space-sm;
+      border-radius: $radius-sm;
+      transition: all $transition-fast;
+
+      &:hover {
+        color: var(--text-primary);
+        background-color: var(--hover-bg);
+      }
+    }
+
+    .mermaid {
+      margin: 0;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      min-height: auto;
+    }
+  }
+}
+
+// Mermaid Error Handling
+.mermaid-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $space-2xl;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  border-radius: $radius-lg;
+  margin: $space-2xl 0;
+  color: #ef4444;
+
+  .error-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: $space-lg;
+    opacity: 0.7;
+  }
+
+  .error-title {
+    font-size: $text-lg;
+    font-weight: $font-semibold;
+    margin-bottom: $space-sm;
+  }
+
+  .error-message {
+    font-size: $text-sm;
+    text-align: center;
+    line-height: $leading-relaxed;
+    opacity: 0.8;
+  }
+
+  .error-details {
+    margin-top: $space-md;
+    padding: $space-md;
+    background-color: rgba(239, 68, 68, 0.05);
+    border-radius: $radius-sm;
+    font-family: $font-family-mono;
+    font-size: $text-xs;
+    color: var(--text-muted);
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+// Print styles for Mermaid diagrams
+@media print {
+  .mermaid {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .mermaid-wrapper .diagram-controls {
+    display: none !important;
+  }
+
+  .mermaid-modal {
+    display: none !important;
+  }
+
+  // Override colors for print
+  .mermaid * {
+    color: #000 !important;
+    fill: #000 !important;
+    stroke: #000 !important;
+  }
+
+  .mermaid .node {
+    fill: #f5f5f5 !important;
+    stroke: #333 !important;
+  }
+
+  .mermaid .edgePath path {
+    stroke: #333 !important;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .mermaid {
+    background-color: #000 !important;
+    border-color: #fff !important;
+
+    * {
+      color: #fff !important;
+      fill: #fff !important;
+      stroke: #fff !important;
+    }
+
+    .node {
+      fill: #000 !important;
+      stroke: #fff !important;
+    }
+
+    .edgePath path {
+      stroke: #fff !important;
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .mermaid-wrapper .diagram-controls,
+  .mermaid-modal {
+    transition: none !important;
+  }
+
+  .mermaid * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

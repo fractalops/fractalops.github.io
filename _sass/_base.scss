@@ -1,0 +1,156 @@
+// =============================================================================
+// CSS RESET & BASE STYLES
+// =============================================================================
+
+// Modern CSS Reset
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px; // Smaller monospace base font size
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variant-ligatures: common-ligatures;
+}
+
+body {
+    font-family: $font-family-base;
+    font-weight: $font-normal;
+    font-size: $text-base;
+    line-height: $leading-relaxed;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+}
+
+// Remove default list styles
+ul,
+ol {
+    list-style: none;
+}
+
+// Remove default button styles
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+// Remove default link styles
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// Image defaults
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+// Form elements
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+// Avoid text overflows
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+// Main content area
+main {
+    flex: 1;
+    padding: $space-2xl 0;
+}
+
+// Horizontal Rule
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: $space-2xl 0;
+}
+
+// Accessibility & Focus Management
+// Skip link for screen readers
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--accent-blue);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: $radius-sm;
+    z-index: 1000;
+
+    &:focus {
+        top: 6px;
+    }
+}
+
+// Focus visible for better keyboard navigation
+:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+// Reduced motion preferences
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+// Print styles
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}

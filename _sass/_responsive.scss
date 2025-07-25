@@ -1,0 +1,710 @@
+// =============================================================================
+// RESPONSIVE STYLES MODULE
+// =============================================================================
+
+// Mobile-First Responsive Adjustments
+// This module contains media queries and responsive overrides that affect multiple components
+
+// Base Font Size Adjustments
+@media (max-width: $tablet) {
+    html {
+        font-size: 15px; // Slightly smaller base font on mobile
+    }
+}
+
+// Removed font-size override to maintain compact sizing
+
+// Typography Responsive Adjustments
+@media (max-width: $tablet) {
+
+    .post-content,
+    .article-content {
+        h1 {
+            font-size: $text-3xl;
+        }
+
+        h2 {
+            font-size: $text-2xl;
+        }
+
+        h3 {
+            font-size: $text-xl;
+        }
+
+        h4 {
+            font-size: $text-lg;
+        }
+
+        p {
+            font-size: $text-base;
+            line-height: $leading-relaxed;
+        }
+
+        blockquote p {
+            font-size: $text-lg;
+        }
+    }
+}
+
+@media (min-width: $wide) {
+
+    .post-content,
+    .article-content {
+        max-width: 70ch; // Slightly wider on large screens
+    }
+}
+
+// Layout Responsive Adjustments
+@media (max-width: $tablet) {
+    .wrapper {
+        padding: 0 $space-md;
+    }
+
+    .grid.grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid.grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: $desktop) {
+    .grid.grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// Component Responsive Adjustments
+@media (max-width: $tablet) {
+
+    // Header adjustments
+    .site-header {
+        padding: $space-xl 0;
+    }
+
+    .author-profile {
+        gap: $space-md;
+        margin-bottom: $space-md;
+    }
+
+    .author-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .author-name {
+        font-size: $text-xl;
+    }
+
+    .author-tagline {
+        font-size: $text-sm;
+    }
+
+    .social-link {
+        width: 36px;
+        height: 36px;
+    }
+
+    .social-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .site-title {
+        font-size: $text-2xl;
+    }
+
+    .site-description {
+        font-size: $text-xs;
+    }
+
+    // Navigation adjustments
+    .site-nav {
+        padding: $space-sm 0;
+    }
+
+    .nav-container {
+        padding: 0 $space-md;
+    }
+
+    .nav-menu {
+        gap: $space-md;
+    }
+
+    // Posts adjustments
+    .homepage-hero {
+        padding: $space-2xl 0;
+    }
+
+    .hero-title {
+        font-size: $text-4xl;
+    }
+
+    .hero-description {
+        font-size: $text-lg;
+    }
+
+    .posts-section {
+        padding: $space-2xl $space-md;
+    }
+
+    .section-header {
+        margin-bottom: $space-2xl;
+
+        h2 {
+            font-size: $text-2xl;
+        }
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: $space-lg;
+    }
+
+    // Post detail adjustments
+    .post-header {
+        padding: $space-2xl 0 $space-xl;
+        margin-bottom: $space-2xl;
+
+        .post-title {
+            font-size: $text-4xl;
+        }
+
+        .post-subtitle {
+            font-size: $text-lg;
+        }
+    }
+
+    // Footer adjustments
+    .site-footer {
+        padding: $space-2xl 0 $space-xl;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: $space-2xl;
+        padding: 0 $space-md;
+    }
+}
+
+// Mobile-Specific Adjustments
+@media (max-width: $mobile) {
+
+    // Typography
+    .post-content,
+    .article-content {
+        h1 {
+            font-size: $text-3xl;
+        }
+
+        h2 {
+            font-size: $text-2xl;
+        }
+
+        h3 {
+            font-size: $text-xl;
+        }
+
+        p {
+            font-size: $text-base;
+            line-height: $leading-relaxed;
+        }
+
+        blockquote p {
+            font-size: $text-base;
+        }
+    }
+
+    // Header mobile adjustments
+    .site-header {
+        padding: $space-lg 0;
+    }
+
+    .header-content {
+        gap: $space-lg;
+    }
+
+    .author-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: $space-md;
+    }
+
+    .author-avatar {
+        align-self: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .site-branding {
+        text-align: center;
+    }
+
+    .site-description {
+        margin: 0 auto;
+    }
+
+    // Navigation mobile adjustments
+    .nav-menu {
+        flex-direction: column;
+        gap: $space-sm;
+        width: 100%;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: $space-sm;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        padding-top: $space-md;
+        border-top: 1px solid var(--border-color);
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        padding: $space-md;
+        border-radius: $radius-sm;
+
+        &.active::after {
+            display: none;
+        }
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    // Posts mobile adjustments
+    .hero-title {
+        font-size: $text-3xl;
+    }
+
+    .posts-section {
+        padding: $space-2xl $space-md;
+    }
+
+    .featured-post {
+        padding: $space-xl;
+        margin-bottom: $space-2xl;
+    }
+
+    .post-list .post-item {
+        padding: $space-lg 0;
+
+        &:hover {
+            margin: 0;
+            padding: $space-lg 0;
+            background-color: transparent;
+            border-radius: 0;
+        }
+    }
+
+    // Post detail mobile adjustments
+    .post-header {
+        .post-title {
+            font-size: $text-3xl;
+        }
+    }
+
+    .post-content {
+        padding: 0 $space-sm;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: $space-2xl;
+        }
+
+        p {
+            font-size: $text-base;
+            line-height: $leading-relaxed;
+        }
+
+        blockquote p {
+            font-size: $text-base;
+        }
+    }
+
+    .post-footer {
+        .post-author {
+            padding: $space-lg;
+        }
+    }
+
+    // Footer mobile adjustments
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: $space-xl;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: $space-md;
+        text-align: center;
+        padding-left: $space-md;
+        padding-right: $space-md;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: $space-sm;
+    }
+
+    // Back to top mobile adjustments
+    .back-to-top {
+        bottom: $space-lg;
+        right: $space-lg;
+        width: 44px;
+        height: 44px;
+
+        .back-to-top-icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    // Table mobile adjustments
+    .table-wrapper table {
+        min-width: 400px;
+    }
+
+    table th,
+    table td {
+        padding: $space-sm $space-md;
+    }
+
+    table th {
+        font-size: $text-xs;
+    }
+
+    // Math mobile adjustments
+    .MathJax {
+        font-size: 0.8em !important;
+    }
+
+    .MathJax_Display {
+        margin: $space-md 0 !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .math-block,
+    .math-steps,
+    .math-problem {
+        padding: $space-md;
+        border-radius: $radius-md;
+    }
+
+    // Mermaid mobile adjustments
+    .mermaid {
+        padding: $space-md;
+        border-radius: $radius-md;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    // Code mobile adjustments
+    pre {
+        border-radius: $radius-sm;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .highlight {
+        border-radius: $radius-sm;
+    }
+
+    .code-block pre {
+        border-radius: 0 0 $radius-sm $radius-sm;
+    }
+
+    .code-block .code-header {
+        border-radius: $radius-sm $radius-sm 0 0;
+    }
+
+    p code,
+    li code,
+    td code {
+        font-size: 0.8em;
+        word-break: break-all;
+    }
+
+    // Categories and tags mobile adjustments
+    .category-list,
+    .tag-list {
+        justify-content: center;
+    }
+
+    .categories-grid,
+    .tags-cloud {
+        text-align: center;
+    }
+
+    .tags-list .tag-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $space-md;
+
+        .tag-stats {
+            align-self: stretch;
+            justify-content: space-between;
+        }
+    }
+}
+
+// Large Screen Enhancements
+@media (min-width: $wide) {
+
+    // Header large screen adjustments
+    .site-header {
+        padding: $space-3xl 0;
+    }
+
+    .author-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .author-name {
+        font-size: $text-3xl;
+    }
+
+    .author-tagline {
+        font-size: $text-lg;
+    }
+
+    .site-title {
+        font-size: $text-4xl;
+    }
+}
+
+// Desktop-Specific Adjustments
+@media (max-width: $desktop) {
+    .header-content {
+        flex-direction: column;
+        gap: $space-xl;
+    }
+
+    .site-branding {
+        text-align: left;
+        width: 100%;
+    }
+
+    .site-description {
+        margin-left: 0;
+        max-width: none;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: $space-2xl;
+    }
+}
+
+// Utility Classes for Responsive Visibility
+@media (max-width: $tablet) {
+    .hidden-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: $tablet + 1px) {
+    .hidden-desktop {
+        display: none !important;
+    }
+}
+
+@media (max-width: $mobile) {
+    .hidden-small-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: $desktop) {
+    .hidden-large-desktop {
+        display: none !important;
+    }
+}
+
+// Responsive Text Alignment
+@media (max-width: $tablet) {
+    .text-center-mobile {
+        text-align: center !important;
+    }
+
+    .text-left-mobile {
+        text-align: left !important;
+    }
+}
+
+// Responsive Spacing
+@media (max-width: $tablet) {
+    .p-sm-mobile {
+        padding: $space-sm !important;
+    }
+
+    .p-md-mobile {
+        padding: $space-md !important;
+    }
+
+    .m-sm-mobile {
+        margin: $space-sm !important;
+    }
+
+    .m-md-mobile {
+        margin: $space-md !important;
+    }
+}
+
+// Responsive Flexbox
+@media (max-width: $tablet) {
+    .flex-col-mobile {
+        flex-direction: column !important;
+    }
+
+    .flex-row-mobile {
+        flex-direction: row !important;
+    }
+
+    .items-center-mobile {
+        align-items: center !important;
+    }
+
+    .justify-center-mobile {
+        justify-content: center !important;
+    }
+}
+
+// Print-Specific Responsive Adjustments
+@media print {
+
+    // Hide interactive elements
+    .nav-toggle,
+    .back-to-top,
+    .social-links,
+    .footer-newsletter {
+        display: none !important;
+    }
+
+    // Adjust spacing for print
+    .site-header,
+    .site-footer {
+        padding: $space-lg 0 !important;
+    }
+
+    // Ensure proper page breaks
+    .post-content h1,
+    .post-content h2,
+    .post-content h3 {
+        page-break-after: avoid;
+    }
+
+    .post-content p,
+    .post-content blockquote,
+    .post-content pre {
+        page-break-inside: avoid;
+    }
+}
+
+// High Contrast Mode Responsive Adjustments
+@media (prefers-contrast: high) {
+    @media (max-width: $mobile) {
+
+        // Ensure sufficient contrast on mobile
+        .nav-link,
+        .footer-nav a,
+        .social-link {
+            border: 2px solid currentColor !important;
+        }
+    }
+}
+
+// Reduced Motion Responsive Adjustments
+@media (prefers-reduced-motion: reduce) {
+    // Disable all transforms and animations on mobile for better performance
+    @media (max-width: $mobile) {
+        * {
+            transform: none !important;
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+}
+
+// Landscape Orientation Adjustments
+@media (max-width: $tablet) and (orientation: landscape) {
+    .site-header {
+        padding: $space-lg 0;
+    }
+
+    .hero-title {
+        font-size: $text-3xl;
+    }
+
+    .post-header .post-title {
+        font-size: $text-3xl;
+    }
+}
+
+// Touch Device Optimizations
+@media (hover: none) and (pointer: coarse) {
+
+    // Increase touch targets
+    .nav-link,
+    .social-link,
+    .footer-nav a {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Remove hover effects on touch devices
+    .nav-link:hover,
+    .social-link:hover,
+    .footer-nav a:hover {
+        transform: none;
+    }
+}
+
+// High DPI Display Adjustments
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    // Adjust font rendering for high DPI displays
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    // Ensure crisp borders
+    .card,
+    .btn,
+    table {
+        border-width: 0.5px;
+    }
+}

@@ -1,0 +1,60 @@
+<!-- MathJax Configuration and Loading -->
+{% if page.math %}
+<script>
+  // MathJax Configuration - Using string concatenation to avoid Jekyll processing
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$' + '$', '$' + '$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      tags: 'ams'
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore|language-.*|highlight',
+      processHtmlClass: 'tex2jax_process'
+    },
+    svg: {
+      fontCache: 'global'
+    },
+    startup: {
+      ready() {
+        console.log('MathJax is loaded and ready');
+        MathJax.startup.defaultReady();
+        
+        // Add custom styling
+        const style = document.createElement('style');
+        style.textContent = `
+          .MathJax {
+            color: var(--text-primary) !important;
+            font-size: 1.1em !important;
+          }
+          .MathJax[display="false"] {
+            display: inline !important;
+            vertical-align: baseline !important;
+            margin: 0 0.2em !important;
+          }
+          .MathJax[display="true"] {
+            display: block !important;
+            text-align: center !important;
+            margin: 2rem 0 !important;
+          }
+          .MathJax_Display {
+            display: block !important;
+            text-align: center !important;
+            margin: 2rem 0 !important;
+            overflow-x: auto;
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    }
+  };
+</script>
+
+<!-- Load MathJax from CDN -->
+<script type="text/javascript" id="MathJax-script" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+{% endif %}

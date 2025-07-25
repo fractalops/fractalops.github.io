@@ -1,0 +1,1190 @@
+// =============================================================================
+// UTILITIES MODULE
+// =============================================================================
+
+// This module contains utility classes that can be used across the site
+// These are high-specificity, single-purpose classes that should override other styles
+
+// Display Utilities
+.hidden {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.grid {
+  display: grid !important;
+}
+
+.inline-flex {
+  display: inline-flex !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+// Flexbox Utilities
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-col {
+  flex-direction: column !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.items-start {
+  align-items: flex-start !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.items-end {
+  align-items: flex-end !important;
+}
+
+.justify-start {
+  justify-content: flex-start !important;
+}
+
+.justify-center {
+  justify-content: center !important;
+}
+
+.justify-end {
+  justify-content: flex-end !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.justify-around {
+  justify-content: space-around !important;
+}
+
+.flex-grow {
+  flex-grow: 1 !important;
+}
+
+.flex-shrink {
+  flex-shrink: 1 !important;
+}
+
+.flex-no-grow {
+  flex-grow: 0 !important;
+}
+
+.flex-no-shrink {
+  flex-shrink: 0 !important;
+}
+
+// Spacing Utilities - Margin
+.m-0 {
+  margin: 0 !important;
+}
+
+.m-xs {
+  margin: $space-xs !important;
+}
+
+.m-sm {
+  margin: $space-sm !important;
+}
+
+.m-md {
+  margin: $space-md !important;
+}
+
+.m-lg {
+  margin: $space-lg !important;
+}
+
+.m-xl {
+  margin: $space-xl !important;
+}
+
+.m-2xl {
+  margin: $space-2xl !important;
+}
+
+.m-3xl {
+  margin: $space-3xl !important;
+}
+
+.m-4xl {
+  margin: $space-4xl !important;
+}
+
+// Margin X-axis (left and right)
+.mx-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.mx-xs {
+  margin-left: $space-xs !important;
+  margin-right: $space-xs !important;
+}
+
+.mx-sm {
+  margin-left: $space-sm !important;
+  margin-right: $space-sm !important;
+}
+
+.mx-md {
+  margin-left: $space-md !important;
+  margin-right: $space-md !important;
+}
+
+.mx-lg {
+  margin-left: $space-lg !important;
+  margin-right: $space-lg !important;
+}
+
+.mx-xl {
+  margin-left: $space-xl !important;
+  margin-right: $space-xl !important;
+}
+
+.mx-2xl {
+  margin-left: $space-2xl !important;
+  margin-right: $space-2xl !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// Margin Y-axis (top and bottom)
+.my-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.my-xs {
+  margin-top: $space-xs !important;
+  margin-bottom: $space-xs !important;
+}
+
+.my-sm {
+  margin-top: $space-sm !important;
+  margin-bottom: $space-sm !important;
+}
+
+.my-md {
+  margin-top: $space-md !important;
+  margin-bottom: $space-md !important;
+}
+
+.my-lg {
+  margin-top: $space-lg !important;
+  margin-bottom: $space-lg !important;
+}
+
+.my-xl {
+  margin-top: $space-xl !important;
+  margin-bottom: $space-xl !important;
+}
+
+.my-2xl {
+  margin-top: $space-2xl !important;
+  margin-bottom: $space-2xl !important;
+}
+
+// Margin Top
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mt-xs {
+  margin-top: $space-xs !important;
+}
+
+.mt-sm {
+  margin-top: $space-sm !important;
+}
+
+.mt-md {
+  margin-top: $space-md !important;
+}
+
+.mt-lg {
+  margin-top: $space-lg !important;
+}
+
+.mt-xl {
+  margin-top: $space-xl !important;
+}
+
+.mt-2xl {
+  margin-top: $space-2xl !important;
+}
+
+.mt-3xl {
+  margin-top: $space-3xl !important;
+}
+
+.mt-4xl {
+  margin-top: $space-4xl !important;
+}
+
+// Margin Bottom
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-xs {
+  margin-bottom: $space-xs !important;
+}
+
+.mb-sm {
+  margin-bottom: $space-sm !important;
+}
+
+.mb-md {
+  margin-bottom: $space-md !important;
+}
+
+.mb-lg {
+  margin-bottom: $space-lg !important;
+}
+
+.mb-xl {
+  margin-bottom: $space-xl !important;
+}
+
+.mb-2xl {
+  margin-bottom: $space-2xl !important;
+}
+
+.mb-3xl {
+  margin-bottom: $space-3xl !important;
+}
+
+.mb-4xl {
+  margin-bottom: $space-4xl !important;
+}
+
+// Margin Left
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+.ml-xs {
+  margin-left: $space-xs !important;
+}
+
+.ml-sm {
+  margin-left: $space-sm !important;
+}
+
+.ml-md {
+  margin-left: $space-md !important;
+}
+
+.ml-lg {
+  margin-left: $space-lg !important;
+}
+
+.ml-xl {
+  margin-left: $space-xl !important;
+}
+
+.ml-2xl {
+  margin-left: $space-2xl !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+// Margin Right
+.mr-0 {
+  margin-right: 0 !important;
+}
+
+.mr-xs {
+  margin-right: $space-xs !important;
+}
+
+.mr-sm {
+  margin-right: $space-sm !important;
+}
+
+.mr-md {
+  margin-right: $space-md !important;
+}
+
+.mr-lg {
+  margin-right: $space-lg !important;
+}
+
+.mr-xl {
+  margin-right: $space-xl !important;
+}
+
+.mr-2xl {
+  margin-right: $space-2xl !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+// Spacing Utilities - Padding
+.p-0 {
+  padding: 0 !important;
+}
+
+.p-xs {
+  padding: $space-xs !important;
+}
+
+.p-sm {
+  padding: $space-sm !important;
+}
+
+.p-md {
+  padding: $space-md !important;
+}
+
+.p-lg {
+  padding: $space-lg !important;
+}
+
+.p-xl {
+  padding: $space-xl !important;
+}
+
+.p-2xl {
+  padding: $space-2xl !important;
+}
+
+.p-3xl {
+  padding: $space-3xl !important;
+}
+
+.p-4xl {
+  padding: $space-4xl !important;
+}
+
+// Padding X-axis (left and right)
+.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.px-xs {
+  padding-left: $space-xs !important;
+  padding-right: $space-xs !important;
+}
+
+.px-sm {
+  padding-left: $space-sm !important;
+  padding-right: $space-sm !important;
+}
+
+.px-md {
+  padding-left: $space-md !important;
+  padding-right: $space-md !important;
+}
+
+.px-lg {
+  padding-left: $space-lg !important;
+  padding-right: $space-lg !important;
+}
+
+.px-xl {
+  padding-left: $space-xl !important;
+  padding-right: $space-xl !important;
+}
+
+.px-2xl {
+  padding-left: $space-2xl !important;
+  padding-right: $space-2xl !important;
+}
+
+// Padding Y-axis (top and bottom)
+.py-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.py-xs {
+  padding-top: $space-xs !important;
+  padding-bottom: $space-xs !important;
+}
+
+.py-sm {
+  padding-top: $space-sm !important;
+  padding-bottom: $space-sm !important;
+}
+
+.py-md {
+  padding-top: $space-md !important;
+  padding-bottom: $space-md !important;
+}
+
+.py-lg {
+  padding-top: $space-lg !important;
+  padding-bottom: $space-lg !important;
+}
+
+.py-xl {
+  padding-top: $space-xl !important;
+  padding-bottom: $space-xl !important;
+}
+
+.py-2xl {
+  padding-top: $space-2xl !important;
+  padding-bottom: $space-2xl !important;
+}
+
+// Text Alignment Utilities
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+// Text Transformation Utilities
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+// Text Style Utilities
+.text-bold {
+  font-weight: $font-bold !important;
+}
+
+.text-semibold {
+  font-weight: $font-semibold !important;
+}
+
+.text-medium {
+  font-weight: $font-medium !important;
+}
+
+.text-normal {
+  font-weight: $font-normal !important;
+}
+
+.text-light {
+  font-weight: $font-light !important;
+}
+
+.text-italic {
+  font-style: italic !important;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-no-underline {
+  text-decoration: none !important;
+}
+
+.text-strike {
+  text-decoration: line-through !important;
+}
+
+// Text Size Utilities
+.text-xs {
+  font-size: $text-xs !important;
+}
+
+.text-sm {
+  font-size: $text-sm !important;
+}
+
+.text-base {
+  font-size: $text-base !important;
+}
+
+.text-lg {
+  font-size: $text-lg !important;
+}
+
+.text-xl {
+  font-size: $text-xl !important;
+}
+
+.text-2xl {
+  font-size: $text-2xl !important;
+}
+
+.text-3xl {
+  font-size: $text-3xl !important;
+}
+
+.text-4xl {
+  font-size: $text-4xl !important;
+}
+
+.text-5xl {
+  font-size: $text-5xl !important;
+}
+
+// Text Color Utilities
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-accent {
+  color: var(--accent-blue) !important;
+}
+
+.text-success {
+  color: var(--accent-green) !important;
+}
+
+.text-warning {
+  color: #f59e0b !important;
+}
+
+.text-error {
+  color: #ef4444 !important;
+}
+
+// Background Color Utilities
+.bg-primary {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-tertiary {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent-blue) !important;
+}
+
+.bg-success {
+  background-color: var(--accent-green) !important;
+}
+
+.bg-warning {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+}
+
+.bg-error {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+// Border Utilities
+.border {
+  border: 1px solid var(--border-color) !important;
+}
+
+.border-0 {
+  border: none !important;
+}
+
+.border-t {
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.border-r {
+  border-right: 1px solid var(--border-color) !important;
+}
+
+.border-b {
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.border-l {
+  border-left: 1px solid var(--border-color) !important;
+}
+
+.border-accent {
+  border-color: var(--accent-blue) !important;
+}
+
+.border-success {
+  border-color: var(--accent-green) !important;
+}
+
+.border-warning {
+  border-color: #f59e0b !important;
+}
+
+.border-error {
+  border-color: #ef4444 !important;
+}
+
+// Border Radius Utilities
+.rounded-none {
+  border-radius: 0 !important;
+}
+
+.rounded-sm {
+  border-radius: $radius-sm !important;
+}
+
+.rounded-md {
+  border-radius: $radius-md !important;
+}
+
+.rounded-lg {
+  border-radius: $radius-lg !important;
+}
+
+.rounded-xl {
+  border-radius: $radius-xl !important;
+}
+
+.rounded-full {
+  border-radius: $radius-full !important;
+}
+
+// Shadow Utilities
+.shadow-none {
+  box-shadow: none !important;
+}
+
+.shadow-sm {
+  box-shadow: $shadow-sm !important;
+}
+
+.shadow-md {
+  box-shadow: $shadow-md !important;
+}
+
+.shadow-lg {
+  box-shadow: $shadow-lg !important;
+}
+
+// Width and Height Utilities
+.w-full {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+.w-screen {
+  width: 100vw !important;
+}
+
+.h-full {
+  height: 100% !important;
+}
+
+.h-auto {
+  height: auto !important;
+}
+
+.h-screen {
+  height: 100vh !important;
+}
+
+// Position Utilities
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.fixed {
+  position: fixed !important;
+}
+
+.sticky {
+  position: sticky !important;
+}
+
+.static {
+  position: static !important;
+}
+
+// Top, Right, Bottom, Left Utilities
+.top-0 {
+  top: 0 !important;
+}
+
+.right-0 {
+  right: 0 !important;
+}
+
+.bottom-0 {
+  bottom: 0 !important;
+}
+
+.left-0 {
+  left: 0 !important;
+}
+
+// Z-index Utilities
+.z-0 {
+  z-index: 0 !important;
+}
+
+.z-10 {
+  z-index: 10 !important;
+}
+
+.z-20 {
+  z-index: 20 !important;
+}
+
+.z-30 {
+  z-index: 30 !important;
+}
+
+.z-40 {
+  z-index: 40 !important;
+}
+
+.z-50 {
+  z-index: 50 !important;
+}
+
+.z-auto {
+  z-index: auto !important;
+}
+
+// Overflow Utilities
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.overflow-scroll {
+  overflow: scroll !important;
+}
+
+.overflow-x-auto {
+  overflow-x: auto !important;
+}
+
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden !important;
+}
+
+// Cursor Utilities
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursor-default {
+  cursor: default !important;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.cursor-wait {
+  cursor: wait !important;
+}
+
+.cursor-text {
+  cursor: text !important;
+}
+
+.cursor-move {
+  cursor: move !important;
+}
+
+.cursor-grab {
+  cursor: grab !important;
+}
+
+.cursor-grabbing {
+  cursor: grabbing !important;
+}
+
+// User Select Utilities
+.select-none {
+  user-select: none !important;
+}
+
+.select-text {
+  user-select: text !important;
+}
+
+.select-all {
+  user-select: all !important;
+}
+
+.select-auto {
+  user-select: auto !important;
+}
+
+// Pointer Events Utilities
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+// Opacity Utilities
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-25 {
+  opacity: 0.25 !important;
+}
+
+.opacity-50 {
+  opacity: 0.5 !important;
+}
+
+.opacity-75 {
+  opacity: 0.75 !important;
+}
+
+.opacity-100 {
+  opacity: 1 !important;
+}
+
+// Transition Utilities
+.transition {
+  transition: all $transition-base !important;
+}
+
+.transition-fast {
+  transition: all $transition-fast !important;
+}
+
+.transition-slow {
+  transition: all $transition-slow !important;
+}
+
+.transition-none {
+  transition: none !important;
+}
+
+// Transform Utilities
+.scale-0 {
+  transform: scale(0) !important;
+}
+
+.scale-50 {
+  transform: scale(0.5) !important;
+}
+
+.scale-75 {
+  transform: scale(0.75) !important;
+}
+
+.scale-90 {
+  transform: scale(0.9) !important;
+}
+
+.scale-100 {
+  transform: scale(1) !important;
+}
+
+.scale-110 {
+  transform: scale(1.1) !important;
+}
+
+.scale-125 {
+  transform: scale(1.25) !important;
+}
+
+.scale-150 {
+  transform: scale(1.5) !important;
+}
+
+// Rotate Utilities
+.rotate-0 {
+  transform: rotate(0deg) !important;
+}
+
+.rotate-45 {
+  transform: rotate(45deg) !important;
+}
+
+.rotate-90 {
+  transform: rotate(90deg) !important;
+}
+
+.rotate-180 {
+  transform: rotate(180deg) !important;
+}
+
+.rotate-270 {
+  transform: rotate(270deg) !important;
+}
+
+// Accessibility Utilities
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border-width: 0 !important;
+}
+
+.not-sr-only {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+.focus-outline-none:focus {
+  outline: none !important;
+}
+
+.focus-outline:focus {
+  outline: 2px solid var(--focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+// Print Utilities
+@media print {
+  .print-hidden {
+    display: none !important;
+  }
+
+  .print-visible {
+    display: block !important;
+  }
+
+  .print-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .print-break-after {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .print-break-inside-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+
+// Clearfix Utility
+.clearfix::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
+// Truncate Text Utility
+.truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.line-clamp-1 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.line-clamp-2 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.line-clamp-3 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+// Word Break Utilities
+.break-normal {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.break-words {
+  overflow-wrap: break-word !important;
+}
+
+.break-all {
+  word-break: break-all !important;
+}
+
+// Whitespace Utilities
+.whitespace-normal {
+  white-space: normal !important;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap !important;
+}
+
+.whitespace-pre {
+  white-space: pre !important;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line !important;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap !important;
+}
+
+// List Style Utilities
+.list-none {
+  list-style-type: none !important;
+}
+
+.list-disc {
+  list-style-type: disc !important;
+}
+
+.list-decimal {
+  list-style-type: decimal !important;
+}
+
+// Object Fit Utilities
+.object-contain {
+  object-fit: contain !important;
+}
+
+.object-cover {
+  object-fit: cover !important;
+}
+
+.object-fill {
+  object-fit: fill !important;
+}
+
+.object-none {
+  object-fit: none !important;
+}
+
+.object-scale-down {
+  object-fit: scale-down !important;
+}
+
+// Object Position Utilities
+.object-center {
+  object-position: center !important;
+}
+
+.object-top {
+  object-position: top !important;
+}
+
+.object-right {
+  object-position: right !important;
+}
+
+.object-bottom {
+  object-position: bottom !important;
+}
+
+.object-left {
+  object-position: left !important;
+}
+
+// Accessibility Utilities
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// Interaction Utilities
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
+.pointer-events-auto {
+  pointer-events: auto !important;
+}

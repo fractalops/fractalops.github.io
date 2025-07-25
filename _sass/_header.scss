@@ -1,0 +1,316 @@
+// =============================================================================
+// ELEGANT HEADER COMPONENT
+// =============================================================================
+
+// Site Header
+.site-header {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: $space-2xl 0;
+  position: relative;
+
+  @media (max-width: $tablet) {
+    padding: $space-xl 0;
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $space-2xl;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    gap: $space-xl;
+  }
+}
+
+// Author Section
+.author-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.author-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-lg;
+  margin-bottom: $space-lg;
+
+  @media (max-width: $tablet) {
+    gap: $space-md;
+    margin-bottom: $space-md;
+  }
+}
+
+.author-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: $radius-full;
+  border: 3px solid var(--border-light);
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: var(--accent-blue);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: $tablet) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.author-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.author-name {
+  font-size: $text-2xl;
+  font-weight: $font-bold;
+  color: var(--text-primary);
+  margin: 0 0 $space-sm 0;
+  line-height: $leading-tight;
+
+  @media (max-width: $tablet) {
+    font-size: $text-xl;
+  }
+}
+
+.author-tagline {
+  font-size: $text-base;
+  line-height: $leading-relaxed;
+  color: var(--text-secondary);
+  margin: 0;
+
+  @media (max-width: $tablet) {
+    font-size: $text-sm;
+  }
+}
+
+// Social Links
+.social-links {
+  display: flex;
+  gap: $space-md;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-lg;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: $tablet) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform $transition-fast;
+
+  .social-link:hover & {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: $tablet) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// Site Branding
+.site-branding {
+  text-align: right;
+  flex-shrink: 0;
+
+  @media (max-width: $desktop) {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.site-title {
+  font-size: $text-3xl;
+  font-weight: $font-bold;
+  color: var(--text-primary);
+  text-decoration: none;
+  line-height: $leading-tight;
+  margin: 0 0 $space-sm 0;
+  display: block;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: var(--accent-blue);
+  }
+
+  &:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: $radius-sm;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: $text-2xl;
+  }
+}
+
+.site-description {
+  font-size: $text-sm;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: $leading-normal;
+  max-width: 300px;
+  margin-left: auto;
+
+  @media (max-width: $desktop) {
+    margin-left: 0;
+    max-width: none;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: $text-xs;
+  }
+}
+
+// Header Responsive Behavior
+@media (max-width: $mobile) {
+  .site-header {
+    padding: $space-lg 0;
+  }
+
+  .header-content {
+    gap: $space-lg;
+  }
+
+  .author-profile {
+    flex-direction: column;
+    text-align: center;
+    gap: $space-md;
+  }
+
+  .author-avatar {
+    align-self: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .site-branding {
+    text-align: center;
+  }
+
+  .site-description {
+    margin: 0 auto;
+  }
+}
+
+// Large screen enhancements
+@media (min-width: $wide) {
+  .site-header {
+    padding: $space-3xl 0;
+  }
+
+  .author-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .author-name {
+    font-size: $text-3xl;
+  }
+
+  .author-tagline {
+    font-size: $text-lg;
+  }
+
+  .site-title {
+    font-size: $text-4xl;
+  }
+}
+
+// Header Animations
+.site-header {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Stagger animation for social links
+.social-link {
+  animation: fadeInScale 0.4s ease-out;
+  animation-fill-mode: both;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Disable animations for users who prefer reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .social-link {
+    animation: none;
+  }
+
+  .social-link:hover,
+  .author-avatar:hover {
+    transform: none;
+  }
+}

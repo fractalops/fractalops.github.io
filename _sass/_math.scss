@@ -1,0 +1,644 @@
+// =============================================================================
+// MATHEMATICAL NOTATION STYLING
+// =============================================================================
+
+// MathJax Container Styling
+.MathJax {
+  outline: 0 !important;
+  display: inline !important;
+  line-height: normal !important;
+  word-spacing: normal !important;
+  word-wrap: normal !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  vertical-align: baseline !important;
+
+  // Ensure proper font rendering
+  font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", "Asana Math", serif !important;
+  font-size: 1em !important;
+  color: var(--text-primary) !important;
+
+  // Inline math
+  &[display="false"] {
+    display: inline !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+  }
+
+  // Block math
+  &[display="true"] {
+    display: block !important;
+    text-align: center !important;
+    margin: $space-xl 0 !important;
+  }
+
+  // SVG elements
+  svg {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+}
+
+// Additional MathJax SVG fixes - These are dynamically created by MathJax
+.MathJax_SVG {
+  display: inline !important;
+  vertical-align: baseline !important;
+}
+
+.MathJax_SVG_Display {
+  display: block !important;
+  text-align: center !important;
+  margin: $space-xl 0 !important;
+}
+
+// MathJax Display (Block) Math
+.MathJax_Display {
+  text-align: center !important;
+  margin: $space-xl 0 !important;
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+
+  // Add subtle background for better readability
+  &::before {
+    content: '';
+    position: absolute;
+    top: -$space-md;
+    left: -$space-md;
+    right: -$space-md;
+    bottom: -$space-md;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: $radius-lg;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity $transition-fast;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  @media (max-width: $tablet) {
+    margin: $space-lg 0 !important;
+
+    &::before {
+      top: -$space-sm;
+      left: -$space-sm;
+      right: -$space-sm;
+      bottom: -$space-sm;
+    }
+  }
+}
+
+// Inline Math Styling
+.MathJax_Preview {
+  color: var(--text-muted) !important;
+  font-style: italic !important;
+  font-size: 0.9em !important;
+}
+
+// Math Container for Better Spacing
+.math-container {
+  margin: $space-xl 0;
+  text-align: center;
+  position: relative;
+
+  .math-label {
+    position: absolute;
+    right: $space-md;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: $text-sm;
+    color: var(--text-muted);
+    font-weight: $font-medium;
+    background-color: var(--bg-primary);
+    padding: $space-xs $space-sm;
+    border-radius: $radius-sm;
+    border: 1px solid var(--border-color);
+  }
+
+  @media (max-width: $tablet) {
+    margin: $space-lg 0;
+
+    .math-label {
+      position: static;
+      transform: none;
+      display: block;
+      text-align: right;
+      margin-top: $space-sm;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+  }
+}
+
+// Math Block with Enhanced Styling
+.math-block {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  margin: $space-2xl 0;
+  position: relative;
+  box-shadow: $shadow-sm;
+  overflow-x: auto;
+
+  .math-title {
+    font-size: $text-lg;
+    font-weight: $font-semibold;
+    color: var(--text-primary);
+    margin-bottom: $space-lg;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: $space-md;
+  }
+
+  .math-content {
+    text-align: center;
+
+    .MathJax_Display {
+      margin: $space-lg 0 !important;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .math-description {
+    margin-top: $space-lg;
+    padding-top: $space-md;
+    border-top: 1px solid var(--border-color);
+    font-size: $text-sm;
+    color: var(--text-secondary);
+    text-align: left;
+    line-height: $leading-relaxed;
+  }
+
+  @media (max-width: $tablet) {
+    padding: $space-lg;
+    margin: $space-xl 0;
+  }
+}
+
+// Theorem and Proof Styling
+.theorem,
+.lemma,
+.corollary,
+.proposition {
+  background-color: rgba(59, 130, 246, 0.05);
+  border-left: 4px solid var(--accent-blue);
+  border-radius: $radius-md;
+  padding: $space-lg;
+  margin: $space-xl 0;
+  position: relative;
+
+  .theorem-header {
+    font-weight: $font-bold;
+    color: var(--accent-blue);
+    margin-bottom: $space-md;
+    font-size: $text-lg;
+
+    .theorem-number {
+      margin-right: $space-sm;
+    }
+
+    .theorem-name {
+      font-style: italic;
+      margin-left: $space-sm;
+    }
+  }
+
+  .theorem-content {
+    color: var(--text-primary);
+    line-height: $leading-relaxed;
+
+    .MathJax_Display {
+      margin: $space-md 0 !important;
+    }
+  }
+}
+
+.proof {
+  background-color: rgba(16, 185, 129, 0.05);
+  border-left: 4px solid var(--accent-green);
+  border-radius: $radius-md;
+  padding: $space-lg;
+  margin: $space-xl 0;
+  position: relative;
+
+  .proof-header {
+    font-weight: $font-bold;
+    color: var(--accent-green);
+    margin-bottom: $space-md;
+    font-size: $text-base;
+  }
+
+  .proof-content {
+    color: var(--text-primary);
+    line-height: $leading-relaxed;
+
+    .MathJax_Display {
+      margin: $space-md 0 !important;
+    }
+  }
+
+  .proof-end {
+    text-align: right;
+    margin-top: $space-md;
+
+    &::after {
+      content: '∎';
+      font-size: $text-lg;
+      color: var(--accent-green);
+      font-weight: bold;
+    }
+  }
+}
+
+// Definition Styling
+.definition {
+  background-color: rgba(245, 158, 11, 0.05);
+  border-left: 4px solid #f59e0b;
+  border-radius: $radius-md;
+  padding: $space-lg;
+  margin: $space-xl 0;
+
+  .definition-header {
+    font-weight: $font-bold;
+    color: #f59e0b;
+    margin-bottom: $space-md;
+    font-size: $text-lg;
+  }
+
+  .definition-content {
+    color: var(--text-primary);
+    line-height: $leading-relaxed;
+
+    .MathJax_Display {
+      margin: $space-md 0 !important;
+    }
+  }
+}
+
+// Example Styling
+.example {
+  background-color: rgba(139, 92, 246, 0.05);
+  border-left: 4px solid #8b5cf6;
+  border-radius: $radius-md;
+  padding: $space-lg;
+  margin: $space-xl 0;
+
+  .example-header {
+    font-weight: $font-bold;
+    color: #8b5cf6;
+    margin-bottom: $space-md;
+    font-size: $text-lg;
+  }
+
+  .example-content {
+    color: var(--text-primary);
+    line-height: $leading-relaxed;
+
+    .MathJax_Display {
+      margin: $space-md 0 !important;
+    }
+  }
+}
+
+// Math Symbols and Notation
+.math-symbol {
+  font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", serif;
+  font-size: 1.1em;
+  color: var(--accent-blue);
+  font-weight: normal;
+}
+
+.math-variable {
+  font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", serif;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.math-constant {
+  font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", serif;
+  font-weight: bold;
+  color: var(--accent-green);
+}
+
+// Equation Numbering
+.equation-number {
+  position: absolute;
+  right: $space-lg;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: $text-sm;
+  color: var(--text-muted);
+  font-weight: $font-medium;
+  background-color: var(--bg-primary);
+  padding: $space-xs $space-sm;
+  border-radius: $radius-sm;
+  border: 1px solid var(--border-color);
+
+  @media (max-width: $tablet) {
+    position: static;
+    transform: none;
+    display: block;
+    text-align: right;
+    margin-top: $space-sm;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}
+
+// Math Steps (for showing work)
+.math-steps {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  margin: $space-2xl 0;
+
+  .step {
+    display: flex;
+    align-items: center;
+    margin: $space-lg 0;
+    padding: $space-md 0;
+    border-bottom: 1px solid var(--border-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background-color: var(--accent-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $text-sm;
+      font-weight: $font-bold;
+      margin-right: $space-lg;
+    }
+
+    .step-content {
+      flex: 1;
+
+      .step-equation {
+        text-align: center;
+        margin: $space-md 0;
+      }
+
+      .step-explanation {
+        font-size: $text-sm;
+        color: var(--text-secondary);
+        margin-top: $space-sm;
+        font-style: italic;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .step-number {
+        margin-right: 0;
+        margin-bottom: $space-sm;
+      }
+
+      .step-content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Math Quiz/Problem Styling
+.math-problem {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  margin: $space-2xl 0;
+
+  .problem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $space-lg;
+    padding-bottom: $space-md;
+    border-bottom: 1px solid var(--border-color);
+
+    .problem-title {
+      font-size: $text-lg;
+      font-weight: $font-semibold;
+      color: var(--text-primary);
+    }
+
+    .problem-difficulty {
+      font-size: $text-xs;
+      padding: $space-xs $space-sm;
+      border-radius: $radius-full;
+      font-weight: $font-medium;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+
+      &.easy {
+        background-color: rgba(16, 185, 129, 0.1);
+        color: var(--accent-green);
+        border: 1px solid var(--accent-green);
+      }
+
+      &.medium {
+        background-color: rgba(245, 158, 11, 0.1);
+        color: #f59e0b;
+        border: 1px solid #f59e0b;
+      }
+
+      &.hard {
+        background-color: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+        border: 1px solid #ef4444;
+      }
+    }
+  }
+
+  .problem-content {
+    margin-bottom: $space-lg;
+    line-height: $leading-relaxed;
+
+    .MathJax_Display {
+      margin: $space-lg 0 !important;
+    }
+  }
+
+  .problem-solution {
+    border-top: 1px solid var(--border-color);
+    padding-top: $space-lg;
+
+    .solution-toggle {
+      background-color: var(--accent-blue);
+      color: white;
+      border: none;
+      padding: $space-sm $space-lg;
+      border-radius: $radius-md;
+      font-size: $text-sm;
+      font-weight: $font-medium;
+      cursor: pointer;
+      transition: all $transition-fast;
+      margin-bottom: $space-lg;
+
+      &:hover {
+        background-color: var(--accent-blue-hover);
+        transform: translateY(-1px);
+      }
+    }
+
+    .solution-content {
+      display: none;
+
+      &.visible {
+        display: block;
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      .MathJax_Display {
+        margin: $space-lg 0 !important;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Math Adjustments
+@media (max-width: $tablet) {
+  .MathJax {
+    font-size: 0.9em !important;
+  }
+
+  .math-block,
+  .math-steps,
+  .math-problem {
+    padding: $space-lg;
+    margin: $space-xl 0;
+  }
+
+  .theorem,
+  .lemma,
+  .corollary,
+  .proposition,
+  .proof,
+  .definition,
+  .example {
+    padding: $space-md;
+    margin: $space-lg 0;
+  }
+}
+
+@media (max-width: $mobile) {
+  .MathJax {
+    font-size: 0.8em !important;
+  }
+
+  .MathJax_Display {
+    margin: $space-md 0 !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .math-block,
+  .math-steps,
+  .math-problem {
+    padding: $space-md;
+    border-radius: $radius-md;
+  }
+}
+
+// Print Styles for Math
+@media print {
+  .MathJax_Display::before {
+    display: none !important;
+  }
+
+  .math-block,
+  .theorem,
+  .proof,
+  .definition,
+  .example {
+    background: white !important;
+    border-color: #ccc !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .math-steps .step {
+    break-inside: avoid;
+  }
+
+  .problem-solution .solution-toggle {
+    display: none !important;
+  }
+
+  .problem-solution .solution-content {
+    display: block !important;
+  }
+}
+
+// High Contrast Mode Support
+@media (prefers-contrast: high) {
+  .MathJax {
+    color: #000 !important;
+  }
+
+  .math-block,
+  .theorem,
+  .proof,
+  .definition,
+  .example {
+    background: #fff !important;
+    border-color: #000 !important;
+    color: #000 !important;
+  }
+
+  .theorem-header,
+  .proof-header,
+  .definition-header,
+  .example-header {
+    color: #000 !important;
+  }
+}
+
+// Reduced Motion Support
+@media (prefers-reduced-motion: reduce) {
+
+  .MathJax_Display::before,
+  .solution-content,
+  .problem-solution .solution-toggle {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .problem-solution .solution-toggle:hover {
+    transform: none !important;
+  }
+}

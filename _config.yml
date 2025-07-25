@@ -9,6 +9,18 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Syntax highlighting
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+
 # Simple pagination (GitHub Pages compatible)
 paginate: 5
 paginate_path: "/page:num/"
@@ -30,6 +42,7 @@ exclude:
 # Only include specific pages in header navigation
 header_pages:
   - index.md
+  - blog.md
 
-url: "https://mfundo.cloud"
+url: "https://blog.mfundo.cloud"
 baseurl: "" 
