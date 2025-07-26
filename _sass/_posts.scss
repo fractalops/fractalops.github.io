@@ -163,6 +163,26 @@
     margin-bottom: $space-md;
     font-size: $text-sm;
     text-align: left;
+
+    .read-more-link {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: $font-medium;
+      margin-left: $space-xs;
+      transition: all $transition-fast;
+      font-size: $text-xs;
+      
+      &:hover {
+        color: var(--accent-blue-hover);
+        text-decoration: underline;
+      }
+      
+      &:focus {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+        border-radius: $radius-sm;
+      }
+    }
   }
 
   .post-tags {

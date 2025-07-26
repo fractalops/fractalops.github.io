@@ -16,7 +16,10 @@ permalink: /blog/
       </div>
       
       {% if post.excerpt %}
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <p class="post-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 25 }}
+          <a href="{{ post.url | relative_url }}" class="read-more-link">read more</a>
+        </p>
       {% endif %}
       
       {% if post.tags.size > 0 %}

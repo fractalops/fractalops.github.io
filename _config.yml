@@ -1,6 +1,7 @@
 title:       "mfundo.cloud"
 description: "Engineering insights from cloud infrastructure, system engineering, and software development"
 author:      "Mfundo"
+twitter_username: "mfundo"
 
 # GitHub Pages compatible setup
 plugins:      

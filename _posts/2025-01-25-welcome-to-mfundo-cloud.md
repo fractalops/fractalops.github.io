@@ -16,21 +16,24 @@ Hello and welcome to my new technical blog! I'm Mfundo, an infrastructure engine
 This blog is where I'll be documenting my journey through the ever-evolving landscape of cloud infrastructure, system engineering, and software development. You can expect:
 
 ### **Infrastructure Engineering**
-Deep dives into cloud architecture patterns, infrastructure as code, and building resilient, scalable systems. I'll share real-world experiences with AWS, Azure, and other cloud platforms.
+Deep dives into cloud architecture patterns, infrastructure as code, and building resilient, secure, scalable systems. I'll share real-world experiences with AWS, Azure, and other cloud platforms.
 
 ### **System Engineering**
 Practical insights into system design, performance optimization, monitoring, and the art of keeping complex systems running smoothly in production.
 
 
 ### **Software Development**
-From backend services to automation scripts, I'll share code, patterns, and lessons learned from building software that powers infrastructure.
+From backend services to sytem level programming, I'll share code, patterns, and lessons learned from building software that powers infrastructure.
+
+### **Cloud and Platform Strategy**
+Strategic approaches to cloud adoption, multi-cloud architectures, and platform engineering. I'll explore how to build scalable platforms that enable teams to ship faster while maintaining security and cost efficiency.
 
 ## My Background
 
 I'm passionate about turning messy cloud entities into resilient, secure and cost-savvy systems. My work spans across:
 
 - **Cloud Infrastructure**: Designing and implementing scalable cloud architectures
-- **DevOps Practices**: Building robust CI/CD pipelines and deployment automation
+- **DevOps Practices**: Building robust & secure CI/CD pipelines and deployment automation
 - **System Reliability**: Ensuring high availability and performance of critical systems
 - **Cost Optimization**: Making cloud infrastructure both powerful and economical
 
@@ -38,7 +41,3 @@ I'm passionate about turning messy cloud entities into resilient, secure and cos
 ## A Note on Content Migration
 
 While I'm setting up this new site, you can find my existing technical articles on [Medium](https://medium.com/@mfundo).
-
----
-
-*This blog is built with Jekyll and hosted on GitHub Pages. The source code is available on github*

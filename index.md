@@ -4,7 +4,7 @@ title: "mfundo.cloud ☁️"
 ---
 
 <div class="content-overview">
-  <p>I write about cloud infrastructure, Systems Engineering, DevOps and software development. At the moment my content sits on <a href="https://medium.com/@mfundo">https://medium.com/@mfundo</a> Will be moving my content to here at some soon. 
+  <p>I write about cloud infrastructure, Systems Engineering, DevOps and software development. At the moment my content sits on <a href="https://medium.com/@mfundo">https://medium.com/@mfundo</a> & I will gradually be moving my content to here.
   </p>
   
 </div>
