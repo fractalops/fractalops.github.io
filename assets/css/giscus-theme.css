@@ -1,0 +1,309 @@
+--- ---
+/* Giscus Theme Customization for Elegant Blog Design */
+
+/* Main Giscus container styling */
+.giscus {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+
+  /* Override Giscus CSS variables to match blog post background */
+  --color-canvas-default: var(--bg-primary) !important;
+  --color-canvas-subtle: var(--bg-primary) !important;
+  --color-canvas-inset: var(--bg-primary) !important;
+  --color-canvas-overlay: var(--bg-primary) !important;
+
+  /* Text colors */
+  --color-fg-default: #e5e5e5 !important;
+  --color-fg-muted: #a0a0a0 !important;
+  --color-fg-subtle: #6b7280 !important;
+  --color-fg-on-emphasis: #ffffff !important;
+
+  /* Border colors - make them transparent to remove all borders */
+  --color-border-default: transparent !important;
+  --color-border-muted: transparent !important;
+  --color-border-subtle: transparent !important;
+
+  /* Accent colors */
+  --color-accent-fg: #3b82f6 !important;
+  --color-accent-emphasis: #3b82f6 !important;
+  --color-accent-muted: rgba(59, 130, 246, 0.4) !important;
+  --color-accent-subtle: rgba(59, 130, 246, 0.1) !important;
+
+  /* Success colors */
+  --color-success-fg: #10b981 !important;
+  --color-success-emphasis: #10b981 !important;
+  --color-success-muted: rgba(16, 185, 129, 0.4) !important;
+  --color-success-subtle: rgba(16, 185, 129, 0.1) !important;
+
+  /* Button styling - remove borders for seamless integration */
+  --color-btn-bg: var(--bg-secondary) !important;
+  --color-btn-border: transparent !important;
+  --color-btn-text: var(--text-primary) !important;
+  --color-btn-hover-bg: var(--hover-bg) !important;
+  --color-btn-hover-border: transparent !important;
+  --color-btn-active-bg: var(--bg-tertiary) !important;
+  --color-btn-active-border: transparent !important;
+
+  /* Primary button */
+  --color-btn-primary-bg: #3b82f6 !important;
+  --color-btn-primary-border: #3b82f6 !important;
+  --color-btn-primary-text: #ffffff !important;
+  --color-btn-primary-hover-bg: #2563eb !important;
+  --color-btn-primary-hover-border: #2563eb !important;
+
+  /* Input styling - remove borders for seamless look */
+  --color-input-bg: var(--bg-secondary) !important;
+  --color-input-border: transparent !important;
+  --color-input-contrast-bg: var(--bg-tertiary) !important;
+  --color-input-disabled-bg: var(--bg-tertiary) !important;
+
+  /* Neutral colors */
+  --color-neutral-muted: #6b7280 !important;
+  --color-neutral-subtle: rgba(107, 114, 128, 0.1) !important;
+
+  /* Attention/warning colors */
+  --color-attention-fg: #f59e0b !important;
+  --color-attention-muted: rgba(245, 158, 11, 0.4) !important;
+  --color-attention-subtle: rgba(245, 158, 11, 0.1) !important;
+
+  /* Danger colors */
+  --color-danger-fg: #ef4444 !important;
+  --color-danger-muted: rgba(239, 68, 68, 0.4) !important;
+  --color-danger-subtle: rgba(239, 68, 68, 0.1) !important;
+
+  /* Done/closed colors */
+  --color-done-fg: #8b5cf6 !important;
+  --color-done-muted: rgba(139, 92, 246, 0.4) !important;
+  --color-done-subtle: rgba(139, 92, 246, 0.1) !important;
+
+  /* Sponsors colors */
+  --color-sponsors-fg: #db2777 !important;
+  --color-sponsors-muted: rgba(219, 39, 119, 0.4) !important;
+  --color-sponsors-subtle: rgba(219, 39, 119, 0.1) !important;
+
+  /* Primer colors for syntax highlighting */
+  --color-primer-fg-disabled: #6b7280 !important;
+  --color-primer-canvas-backdrop: rgba(0, 0, 0, 0.8) !important;
+  --color-primer-canvas-sticky: #1a1a1a !important;
+
+  /* Shadow */
+  --color-shadow-small: rgba(0, 0, 0, 0.2) !important;
+  --color-shadow-medium: rgba(0, 0, 0, 0.3) !important;
+  --color-shadow-large: rgba(0, 0, 0, 0.4) !important;
+  --color-shadow-extra-large: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Ensure the Giscus widget fills its 60% container properly */
+.giscus {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+
+  /* Match blog post background and remove borders */
+  background: var(--bg-primary) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Ensure the iframe blends seamlessly with the page */
+.giscus iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: var(--bg-primary) !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Remove any frame styling that creates visual separation */
+.giscus-frame {
+  width: 100% !important;
+  max-width: 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: var(--bg-primary) !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Size the comments widget to 60% and center it */
+.comments-section .giscus-wrapper {
+  width: 60% !important;
+  max-width: 60% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  /* Match the blog post background */
+  background: var(--bg-primary) !important;
+  border-radius: 0 !important;
+
+  /* Center the wrapper */
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure proper font inheritance */
+.giscus * {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+}
+
+/* Fo
+rce proper sizing for all Giscus elements */
+.giscus,
+.giscus *,
+.giscus iframe,
+.giscus-frame {
+  box-sizing: border-box !important;
+}
+
+/* Ensure no width constraints from parent elements */
+.comments-section,
+.comments-container,
+.giscus-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Override any potential max-width constraints */
+.giscus {
+  max-width: none !important;
+  min-height: 150px !important;
+}
+
+/* Ensure the Giscus content area uses full width */
+.giscus .gsc-main {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Make sure the comment form and reactions use full width */
+.giscus .gsc-comment-box,
+.giscus .gsc-reactions,
+.giscus .gsc-comments {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Remove any margins that might cause centering issues */
+.giscus .gsc-main,
+.giscus .gsc-comment-box,
+.giscus .gsc-reactions {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Resp
+onsive sizing for mobile devices */
+@media (max-width: 768px) {
+  .comments-section .giscus-wrapper {
+    width: 90% !important;
+    max-width: 90% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .comments-section .giscus-wrapper {
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+}
+
+/*
+ Remove all borders and visual separations from Giscus elements */
+.giscus,
+.giscus *,
+.giscus iframe,
+.giscus-frame,
+.giscus .gsc-main,
+.giscus .gsc-comment-box,
+.giscus .gsc-reactions,
+.giscus .gsc-comments {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Ensure seamless background integration */
+.giscus .gsc-main,
+.giscus .gsc-comment-box-main,
+.giscus .gsc-reactions,
+.giscus .gsc-comments {
+  background: var(--bg-primary) !important;
+  background-color: var(--bg-primary) !important;
+}
+
+/* Remove any container borders that create visual separation */
+.giscus .gsc-comment-box,
+.giscus .gsc-comment-box-main {
+  border: none !important;
+  background: var(--bg-primary) !important;
+}
+
+/* Ensure the main container has no visual boundaries */
+.giscus .gsc-main {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: var(--bg-primary) !important;
+}/
+* Ensure the giscus widget in comments section matches post page background exactly */
+.comments-section .giscus {
+  background: var(--bg-primary) !important;
+  background-color: var(--bg-primary) !important;
+}
+
+/* Also ensure all nested elements match */
+.comments-section .giscus * {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Specifically target main content areas */
+.comments-section .giscus .gsc-main,
+.comments-section .giscus .gsc-comment-box,
+.comments-section .giscus .gsc-reactions,
+.comments-section .giscus .gsc-comments {
+  background: var(--bg-primary) !important;
+  background-color: var(--bg-primary) !important;
+}/*
+ Force the exact same background as post content with highest specificity */
+.comments-section .giscus,
+.comments-section .giscus iframe,
+.comments-section .giscus-frame {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+}
+
+/* Ensure all internal giscus elements use the same background */
+.comments-section .giscus .gsc-main,
+.comments-section .giscus .gsc-comment-box-main,
+.comments-section .giscus .gsc-comment-box-textarea,
+.comments-section .giscus .gsc-comment-box-bottom {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+}/* Fo
+rce dark color-scheme for the Giscus frame */
+.giscus,
+.giscus iframe,
+.giscus-frame {
+  color-scheme: dark !important;
+}
+
+/* Ensure the comments section uses dark color-scheme */
+.comments-section {
+  color-scheme: dark !important;
+}
+
+/* Force dark color-scheme for all Giscus elements */
+.comments-section .giscus,
+.comments-section .giscus *,
+.comments-section .giscus iframe,
+.comments-section .giscus-frame {
+  color-scheme: dark !important;
+}

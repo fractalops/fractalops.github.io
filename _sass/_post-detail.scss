@@ -810,6 +810,72 @@
     margin-bottom: $space-xl;
   }
 
+  .comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    /* Ensure seamless integration with post content */
+    background: var(--bg-primary);
+    border: none;
+    box-shadow: none;
+  }
+
+  .giscus-wrapper {
+    margin-top: $space-lg;
+    width: 100%;
+    
+    // Ensure the giscus widget fills the container
+    .giscus {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 100% !important;
+    }
+    
+    // Remove any styling that might interfere with sizing
+    .giscus-frame {
+      width: 100% !important;
+      border: none !important;
+      background: transparent !important;
+    }
+  }
+
+  // Custom Giscus theme overrides to match site design
+  .giscus {
+    // Override Giscus colors to match our theme
+    --color-canvas-default: var(--bg-secondary) !important;
+    --color-canvas-subtle: var(--bg-tertiary) !important;
+    --color-border-default: var(--border-color) !important;
+    --color-border-muted: var(--border-color) !important;
+    --color-neutral-muted: var(--text-muted) !important;
+    --color-fg-default: var(--text-primary) !important;
+    --color-fg-muted: var(--text-secondary) !important;
+    --color-fg-subtle: var(--text-muted) !important;
+    --color-accent-fg: var(--accent-blue) !important;
+    --color-accent-emphasis: var(--accent-blue) !important;
+    --color-success-fg: var(--accent-green) !important;
+    --color-attention-subtle: rgba(245, 158, 11, 0.1) !important;
+    --color-danger-fg: #ef4444 !important;
+    
+    // Button styling
+    --color-btn-bg: var(--bg-tertiary) !important;
+    --color-btn-border: var(--border-color) !important;
+    --color-btn-text: var(--text-primary) !important;
+    --color-btn-hover-bg: var(--hover-bg) !important;
+    --color-btn-hover-border: var(--accent-blue) !important;
+    
+    // Input styling
+    --color-input-bg: var(--bg-primary) !important;
+    --color-input-border: var(--border-color) !important;
+    --color-input-contrast-bg: var(--bg-secondary) !important;
+    
+    // Make sure the iframe blends with our design
+    iframe {
+      border-radius: $radius-lg !important;
+      border: 1px solid var(--border-color) !important;
+      background-color: var(--bg-secondary) !important;
+    }
+  }
+
   .comments-placeholder {
     text-align: center;
     padding: $space-2xl;

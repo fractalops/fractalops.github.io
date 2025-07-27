@@ -10,17 +10,12 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Syntax highlighting
-highlighter: rouge
+# Markdown processing (syntax highlighting handled by Highlight.js)
 markdown: kramdown
+highlighter: none
 kramdown:
-  syntax_highlighter: rouge
   syntax_highlighter_opts:
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: false
+    disable: true
 
 # SASS configuration
 sass:
@@ -51,4 +46,19 @@ header_pages:
   - blog.md
 
 url: "https://blog.mfundo.cloud"
-baseurl: "" 
+baseurl: ""
+
+# Giscus Comments Configuration
+giscus:
+  repo: "fractalops/fractalops.github.io"
+  repo_id: "R_kgDOPNASqQ"
+  category: "Announcements"
+  category_id: "DIC_kwDOPNASqc4CtdfB"
+  mapping: "pathname"
+  strict: "0"
+  reactions_enabled: "1"
+  emit_metadata: "0"
+  input_position: "bottom"
+  theme: "dark"
+  lang: "en"
+  loading: "lazy" 

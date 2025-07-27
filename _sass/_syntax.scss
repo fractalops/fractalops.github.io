@@ -1,11 +1,11 @@
 // =============================================================================
-// SYNTAX HIGHLIGHTING & CODE BLOCKS
+// SYNTAX HIGHLIGHTING - HIGHLIGHT.JS
 // =============================================================================
 
-// Enhanced Code Typography
+// Basic code typography
 code {
   font-family: $font-family-mono;
-  font-size: 0.9em;
+  font-size: 0.775em; // 2px smaller
   background-color: var(--code-bg);
   border: 1px solid var(--code-border);
   border-radius: $radius-sm;
@@ -13,360 +13,52 @@ code {
   color: var(--accent-green);
   font-weight: $font-medium;
   word-break: break-word;
+  text-decoration: none !important;
 }
 
-// Code Block Improvements
+// Code blocks - let Highlight.js handle styling, minimal overrides only
 pre {
   font-family: $font-family-mono;
-  font-size: $text-sm;
-  background-color: var(--code-bg);
-  border: 1px solid var(--code-border);
-  border-radius: $radius-lg;
-  padding: $space-xl;
-  margin: $space-2xl 0;
+  font-size: 0.75rem !important; // 2px smaller
+  margin: $space-2xl 0 !important;
   overflow-x: auto;
   line-height: $leading-relaxed;
   position: relative;
-  box-shadow: $shadow-md;
+
+  // Remove any conflicting styles
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
 
   code {
-    background: none;
-    border: none;
-    padding: 0;
-    font-size: inherit;
-    color: var(--text-primary);
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    color: inherit !important;
     font-weight: $font-normal;
     word-break: normal;
+    text-decoration: none !important;
   }
 
-  // Language label for code blocks
-  &[data-lang]::before {
-    content: attr(data-lang);
-    position: absolute;
-    top: $space-sm;
-    right: $space-md;
-    font-size: $text-xs;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    font-weight: $font-medium;
-    letter-spacing: 0.05em;
-    background-color: var(--bg-tertiary);
-    padding: $space-xs $space-sm;
-    border-radius: $radius-sm;
-    border: 1px solid var(--border-color);
-  }
-
-  // Line numbers support
-  &.line-numbers {
-    padding-left: 3.5em;
-    position: relative;
-
-    &::before {
-      content: counter(line);
-      counter-increment: line;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 3em;
-      padding: $space-xl $space-sm;
-      color: var(--text-muted);
-      font-size: $text-xs;
-      text-align: right;
-      border-right: 1px solid var(--border-color);
-      background-color: var(--bg-secondary);
-      user-select: none;
-    }
+  // Remove the dollar sign pseudo-element
+  &::before {
+    display: none !important;
+    content: none !important;
   }
 }
 
-// Prevent horizontal scrolling on the page
-.highlight {
-  overflow-x: auto;
-  margin: $space-2xl 0;
-  border-radius: $radius-lg;
-  background-color: var(--code-bg) !important;
-  border: 1px solid var(--code-border);
-  box-shadow: $shadow-sm;
+// Highlight.js specific styling - minimal overrides
+.hljs {
+  font-size: 0.75rem !important; // 2px smaller
+  text-decoration: none !important;
+  border-radius: $radius-lg !important;
 
-  pre {
-    margin: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    padding: $space-lg !important;
-  }
-}
-
-// Fix for Jekyll's highlighter-rouge wrapper - Remove all duplicate backgrounds
-.highlighter-rouge {
-  background: transparent !important;
-  border: none !important;
-  margin: 0 !important;
-  
-  .highlight {
-    background-color: var(--code-bg) !important;
-    border: 1px solid var(--code-border) !important;
-    border-radius: $radius-lg !important;
-    margin: $space-2xl 0 !important;
-    
-    pre {
-      background: transparent !important;
-      border: none !important;
-      margin: 0 !important;
-      border-radius: 0 !important;
-    }
-  }
-}
-
-// Language-specific wrapper fix - Remove duplicate backgrounds
-div[class*="language-"] {
-  background: transparent !important;
-  border: none !important;
-  margin: 0 !important;
-  
-  .highlighter-rouge {
-    background: transparent !important;
-    border: none !important;
-    
-    .highlight {
-      background-color: var(--code-bg) !important;
-      border: 1px solid var(--code-border) !important;
-      
-      pre {
-        background: transparent !important;
-        border: none !important;
-      }
-    }
-  }
-}
-
-// Copy button for code blocks
-.copy-button {
-  position: absolute;
-  top: $space-sm;
-  right: $space-sm;
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: $radius-sm;
-  padding: $space-xs $space-sm;
-  font-size: $text-xs;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all $transition-fast;
-  z-index: 10;
-
-  &:hover {
-    background-color: var(--hover-bg);
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-
-  .copy-icon {
-    width: 12px;
-    height: 12px;
-    margin-right: $space-xs;
-  }
-}
-
-// Syntax Highlighting Theme - Dark
-.highlight {
-  // Base styles
-  .c { color: #6a737d; font-style: italic; } // Comment
-  .err { color: #f97583; } // Error
-  .k { color: #f97583; font-weight: bold; } // Keyword
-  .o { color: #f8f8f2; } // Operator
-  .cm { color: #6a737d; font-style: italic; } // Comment.Multiline
-  .cp { color: #f97583; font-weight: bold; } // Comment.Preproc
-  .c1 { color: #6a737d; font-style: italic; } // Comment.Single
-  .cs { color: #6a737d; font-style: italic; } // Comment.Special
-
-  // Constants
-  .gd { color: #f97583; } // Generic.Deleted
-  .ge { font-style: italic; } // Generic.Emph
-  .gr { color: #f97583; } // Generic.Error
-  .gh { color: #79b8ff; font-weight: bold; } // Generic.Heading
-  .gi { color: #85e89d; } // Generic.Inserted
-  .go { color: #d1d5da; } // Generic.Output
-  .gp { color: #d1d5da; } // Generic.Prompt
-  .gs { font-weight: bold; } // Generic.Strong
-  .gu { color: #b392f0; font-weight: bold; } // Generic.Subheading
-  .gt { color: #f97583; } // Generic.Traceback
-
-  // Keywords
-  .kc { color: #79b8ff; } // Keyword.Constant
-  .kd { color: #f97583; } // Keyword.Declaration
-  .kn { color: #f97583; } // Keyword.Namespace
-  .kp { color: #f97583; } // Keyword.Pseudo
-  .kr { color: #f97583; } // Keyword.Reserved
-  .kt { color: #f97583; } // Keyword.Type
-
-  // Literals
-  .ld { color: #79b8ff; } // Literal.Date
-  .m { color: #79b8ff; } // Literal.Number
-  .s { color: #9ecbff; } // Literal.String
-  .na { color: #ffab70; } // Name.Attribute
-  .nb { color: #79b8ff; } // Name.Builtin
-  .nc { color: #b392f0; } // Name.Class
-  .no { color: #79b8ff; } // Name.Constant
-  .nd { color: #b392f0; } // Name.Decorator
-  .ni { color: #ffeaa7; } // Name.Entity
-  .ne { color: #f97583; } // Name.Exception
-  .nf { color: #b392f0; } // Name.Function
-  .nl { color: #f8f8f2; } // Name.Label
-  .nn { color: #f8f8f2; } // Name.Namespace
-  .nx { color: #79b8ff; } // Name.Other
-  .py { color: #f8f8f2; } // Name.Property
-  .nt { color: #85e89d; } // Name.Tag
-  .nv { color: #f8f8f2; } // Name.Variable
-  .ow { color: #f97583; font-weight: bold; } // Operator.Word
-  .w { color: #f8f8f2; } // Text.Whitespace
-
-  // Numbers
-  .mf { color: #79b8ff; } // Literal.Number.Float
-  .mh { color: #79b8ff; } // Literal.Number.Hex
-  .mi { color: #79b8ff; } // Literal.Number.Integer
-  .mo { color: #79b8ff; } // Literal.Number.Oct
-
-  // Strings
-  .sb { color: #9ecbff; } // Literal.String.Backtick
-  .sc { color: #9ecbff; } // Literal.String.Char
-  .sd { color: #6a737d; font-style: italic; } // Literal.String.Doc
-  .s2 { color: #9ecbff; } // Literal.String.Double
-  .se { color: #79b8ff; } // Literal.String.Escape
-  .sh { color: #9ecbff; } // Literal.String.Heredoc
-  .si { color: #79b8ff; } // Literal.String.Interpol
-  .sx { color: #9ecbff; } // Literal.String.Other
-  .sr { color: #85e89d; } // Literal.String.Regex
-  .s1 { color: #9ecbff; } // Literal.String.Single
-  .ss { color: #79b8ff; } // Literal.String.Symbol
-
-  // Variables
-  .bp { color: #79b8ff; } // Name.Builtin.Pseudo
-  .vc { color: #f8f8f2; } // Name.Variable.Class
-  .vg { color: #f8f8f2; } // Name.Variable.Global
-  .vi { color: #f8f8f2; } // Name.Variable.Instance
-
-  // Language-specific enhancements
-  // JavaScript/TypeScript
-  .language-javascript,
-  .language-typescript,
-  .language-js,
-  .language-ts {
-    .k { color: #f97583; } // Keywords (const, let, var, function, etc.)
-    .kd { color: #f97583; } // Declaration keywords
-    .nx { color: #79b8ff; } // Variables and functions
-    .s1, .s2 { color: #9ecbff; } // Strings
-    .mi { color: #79b8ff; } // Numbers
-    .kc { color: #79b8ff; } // Constants (true, false, null)
-  }
-
-  // Python
-  .language-python,
-  .language-py {
-    .k { color: #f97583; } // Keywords (def, class, import, etc.)
-    .nf { color: #b392f0; } // Function names
-    .nc { color: #b392f0; } // Class names
-    .s1, .s2 { color: #9ecbff; } // Strings
-    .sd { color: #6a737d; font-style: italic; } // Docstrings
-  }
-
-  // CSS/SCSS
-  .language-css,
-  .language-scss {
-    .nt { color: #85e89d; } // Tags
-    .nc { color: #ffab70; } // Classes
-    .nf { color: #b392f0; } // Properties
-    .s1, .s2 { color: #9ecbff; } // Values
-    .mi { color: #79b8ff; } // Numbers
-  }
-
-  // HTML
-  .language-html {
-    .nt { color: #85e89d; } // Tags
-    .na { color: #ffab70; } // Attributes
-    .s { color: #9ecbff; } // Attribute values
-  }
-
-  // JSON
-  .language-json {
-    .nt { color: #79b8ff; } // Keys
-    .s2 { color: #9ecbff; } // String values
-    .mi { color: #79b8ff; } // Numbers
-    .kc { color: #79b8ff; } // Booleans and null
-  }
-
-  // Shell/Bash
-  .language-bash,
-  .language-shell,
-  .language-sh {
-    .nb { color: #85e89d; } // Built-in commands
-    .nv { color: #ffab70; } // Variables
-    .s1, .s2 { color: #9ecbff; } // Strings
-    .c1 { color: #6a737d; font-style: italic; } // Comments
-  }
-
-  // SQL
-  .language-sql {
-    .k { color: #f97583; text-transform: uppercase; } // Keywords
-    .s1, .s2 { color: #9ecbff; } // Strings
-    .mi { color: #79b8ff; } // Numbers
-  }
-
-  // Markdown
-  .language-markdown,
-  .language-md {
-    .gh { color: #79b8ff; font-weight: bold; } // Headers
-    .gs { font-weight: bold; } // Bold text
-    .ge { font-style: italic; } // Italic text
-    .s { color: #9ecbff; } // Links and code
-  }
-}
-
-// Code Block Enhancements
-.code-block {
-  position: relative;
-  margin: $space-2xl 0;
-
-  .code-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--code-border);
-    border-bottom: none;
-    border-radius: $radius-lg $radius-lg 0 0;
-    padding: $space-sm $space-md;
-    font-size: $text-xs;
-    color: var(--text-secondary);
-
-    .filename {
-      font-family: $font-family-mono;
-      font-weight: $font-medium;
-      color: var(--text-primary);
-    }
-
-    .language {
-      text-transform: uppercase;
-      font-weight: $font-medium;
-      letter-spacing: 0.05em;
-      opacity: 0.8;
-    }
-  }
-
-  pre {
-    margin: 0;
-    border-radius: 0 0 $radius-lg $radius-lg;
-    border-top: none;
-  }
-
-  &.no-header pre {
-    border-radius: $radius-lg;
-    border: 1px solid var(--code-border);
+  // Remove any underlines
+  * {
+    text-decoration: none !important;
+    border-bottom: none !important;
   }
 }
 
@@ -374,124 +66,76 @@ div[class*="language-"] {
 p code,
 li code,
 td code {
-  font-size: 0.875em;
+  font-size: 0.75em; // 2px smaller
   padding: 0.125em 0.25em;
   margin: 0 0.125em;
   word-break: break-word;
+  text-decoration: none !important;
 }
 
-// Code highlighting for search results
-.search-result code {
-  background-color: rgba(255, 235, 59, 0.2);
-  color: var(--text-primary);
-  border-color: rgba(255, 235, 59, 0.4);
+// Ensure no underlines anywhere
+pre code,
+.hljs,
+.hljs *,
+code {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  text-underline-offset: unset !important;
 }
 
-// Responsive code blocks
+// Responsive adjustments
 @media (max-width: $tablet) {
   pre {
-    font-size: $text-xs;
-    padding: $space-md;
+    font-size: 0.625rem; // 2px smaller on mobile
     margin: $space-xl 0;
   }
 
-  .highlight {
-    margin: $space-xl 0;
-
-    .copy-button {
-      top: $space-xs;
-      right: $space-xs;
-      padding: $space-xs;
-      font-size: 10px;
-    }
-  }
-
-  .code-block .code-header {
-    padding: $space-xs $space-sm;
-    font-size: 10px;
+  .hljs {
+    font-size: 0.625rem !important;
   }
 }
 
 @media (max-width: $mobile) {
   pre {
-    border-radius: $radius-sm;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
   }
 
-  .highlight {
-    border-radius: $radius-sm;
-  }
-
-  .code-block pre {
-    border-radius: 0 0 $radius-sm $radius-sm;
-  }
-
-  .code-block .code-header {
-    border-radius: $radius-sm $radius-sm 0 0;
+  .hljs {
+    border-radius: $radius-sm !important;
   }
 
   p code,
   li code,
   td code {
-    font-size: 0.8em;
+    font-size: 0.675em; // 2px smaller on mobile
     word-break: break-all;
   }
 }
 
-// Print styles for code
+// Print styles
 @media print {
+
   pre,
-  code {
+  code,
+  .hljs {
     background: #f5f5f5 !important;
     color: #333 !important;
-    border: 1px solid #ccc !important;
   }
-
-  .highlight {
-    background: #f5f5f5 !important;
-    border: 1px solid #ccc !important;
-
-    * {
-      color: #333 !important;
-    }
-  }
-
-  .copy-button {
-    display: none !important;
-  }
-}
-
-// Accessibility improvements
-.highlight:focus-within {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
 }
 
 // High contrast mode support
 @media (prefers-contrast: high) {
-  code {
-    background-color: #000;
-    color: #fff;
-    border-color: #fff;
+
+  code,
+  .hljs {
+    background-color: #000 !important;
+    color: #fff !important;
   }
+}
 
-  pre {
-    background-color: #000;
-    border-color: #fff;
-  }
-
-  .highlight {
-    background-color: #000;
-    border-color: #fff;
-
-    * {
-      color: #fff !important;
-    }
-
-    .k, .kd, .kn, .kp, .kr, .kt { color: #ff0 !important; } // Keywords in yellow
-    .s, .s1, .s2 { color: #0f0 !important; } // Strings in green
-    .c, .c1, .cm { color: #888 !important; } // Comments in gray
-    .mi, .mf { color: #0ff !important; } // Numbers in cyan
-  }
+// Accessibility improvements
+.hljs:focus-within {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }

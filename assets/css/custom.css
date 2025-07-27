@@ -1,5 +1,4 @@
----
----
+--- ---
 
 /* Additional MathJax fixes for edge cases */
 .MathJax_SVG {
@@ -17,4 +16,85 @@
 pre .MathJax,
 code .MathJax {
   display: none !important;
+}
+
+/* Sphere Animation Styling */
+.sphere-animation {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.sphere-animation img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  /* Blend with dark background using CSS filters */
+  filter: brightness(0.8) contrast(1.2) hue-rotate(10deg);
+  /* Add subtle glow effect */
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  /* Smooth transitions */
+  transition: all 0.3s ease;
+}
+
+.sphere-animation img:hover {
+  filter: brightness(1) contrast(1.3) hue-rotate(15deg);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  transform: scale(1.05);
+}
+
+/* Responsive sizing */
+@media (max-width: 768px) {
+  .sphere-animation img {
+    max-width: 150px;
+  }
+}
+
+/* Giscus Comments Theme Integration */
+.giscus {
+  /* Override Giscus default colors to match our elegant dark theme */
+  --color-prettylights-syntax-comment: var(--text-muted) !important;
+  --color-prettylights-syntax-constant: var(--accent-green) !important;
+  --color-prettylights-syntax-entity: var(--accent-blue) !important;
+  --color-prettylights-syntax-storage-modifier-import: var(--text-primary) !important;
+  --color-prettylights-syntax-entity-tag: var(--accent-green) !important;
+  --color-prettylights-syntax-keyword: var(--accent-blue) !important;
+  --color-prettylights-syntax-string: #9ecbff !important;
+  --color-prettylights-syntax-variable: var(--text-primary) !important;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #ef4444 !important;
+  --color-prettylights-syntax-invalid-illegal-text: var(--text-primary) !important;
+  --color-prettylights-syntax-invalid-illegal-bg: rgba(239, 68, 68, 0.1) !important;
+  --color-prettylights-syntax-carriage-return-text: var(--text-primary) !important;
+  --color-prettylights-syntax-carriage-return-bg: rgba(239, 68, 68, 0.1) !important;
+  --color-prettylights-syntax-string-regexp: var(--accent-green) !important;
+  --color-prettylights-syntax-markup-list: #f59e0b !important;
+  --color-prettylights-syntax-markup-heading: var(--accent-blue) !important;
+  --color-prettylights-syntax-markup-italic: var(--text-primary) !important;
+  --color-prettylights-syntax-markup-bold: var(--text-primary) !important;
+  --color-prettylights-syntax-markup-deleted-text: #ef4444 !important;
+  --color-prettylights-syntax-markup-deleted-bg: rgba(239, 68, 68, 0.1) !important;
+  --color-prettylights-syntax-markup-inserted-text: var(--accent-green) !important;
+  --color-prettylights-syntax-markup-inserted-bg: rgba(16, 185, 129, 0.1) !important;
+  --color-prettylights-syntax-markup-changed-text: #f59e0b !important;
+  --color-prettylights-syntax-markup-changed-bg: rgba(245, 158, 11, 0.1) !important;
+  --color-prettylights-syntax-markup-ignored-text: var(--text-muted) !important;
+  --color-prettylights-syntax-markup-ignored-bg: var(--bg-tertiary) !important;
+  --color-prettylights-syntax-meta-diff-range: var(--accent-blue) !important;
+  --color-prettylights-syntax-brackethighlighter-angle: var(--text-muted) !important;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: var(--text-muted) !important;
+  --color-prettylights-syntax-constant-other-reference-link: var(--accent-blue) !important;
+}
+
+/* Ensure Giscus iframe has proper styling */
+.giscus iframe {
+  border-radius: 0.5rem !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--bg-secondary) !important;
+}
+
+/* Style the Giscus container to match our design */
+.giscus-frame {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 0.5rem !important;
 }
