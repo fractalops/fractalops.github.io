@@ -10,7 +10,7 @@ A personal engineering blog focused on cloud infrastructure, system engineering,
 - [Jekyll Docs](https://jekyllrb.com/docs/)
 - [GitHub Pages Docs](https://docs.github.com/en/pages)
 - [Jekyll Themes](https://pages.github.com/themes/)
-- [Math]()
-- [Syntax Highlighting]
+- [MathJax](https://github.com/mathjax/MathJax)
+- [Highligh.js](https://github.com/highlightjs/highlight.js)
 
 ---
