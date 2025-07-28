@@ -4,19 +4,19 @@ title: "Welcome 👋🏽"
 date: 2025-01-25 10:00:00 +0200
 categories: [announcement, welcome]
 tags: [cloud, infrastructure, devops, engineering]
-excerpt: "Welcome to my new technical blog where I'll be sharing insights on cloud infrastructure, system engineering, and software development. This is where deep technical discussions meet practical engineering solutions."
+excerpt: "Welcome to my technical blog where I share insights on cloud infrastructure, system engineering, and software development."
 ---
 
 # Welcome
 
-Hello and welcome to my new technical blog! I'm Mfundo, an infrastructure engineer and DevOps specialist from South Africa, and I'm excited to share this space with you.
+Hello and welcome to my technical blog! I'm Mfundo, an infrastructure engineer and DevOps specialist from South Africa, and I'm excited to share this space with you.
 
 ## What You'll Find Here
 
-This blog is where I'll be documenting my learnings on the ever-evolving landscape of cloud infrastructure, Distributed System , and Software Delievery. You can expect:
+This blog is where I document my learnings on the ever-evolving landscape of cloud infrastructure, Distributed System , and Software Delievery. You can expect:
 
 ### **Infrastructure Engineering**
-Deep dives into cloud architecture patterns, infrastructure as code, and building resilient, secure, scalable systems. I'll share real-world experiences with AWS, Azure, and other cloud platforms.
+Deep dives into cloud architecture patterns, infrastructure as code, and building resilient, secure, scalable systems. I share real-world experiences with AWS, Azure, and other cloud platforms.
 
 ### **Distributed Systems**
 Practical insights into system design, performance optimization, monitoring, the art and science of keeping complex systems running smoothly in production.
@@ -30,7 +30,7 @@ Strategic approaches to cloud adoption, multi-cloud architectures, and platform 
 
 ## My Background
 
-I'm passionate about turning messy cloud entities into resilient, secure and cost-savvy systems. My work spans across:
+I'm passionate about turning messy cloud entities into resilient, secure, scalable and cost-savvy systems. My work spans across:
 
 - **Cloud Infrastructure**: Designing and implementing scalable cloud architectures
 - **DevOps Practices**: Building robust & secure CI/CD pipelines and deployment automation while nurturing a culture of collaboration and continuous improvement
