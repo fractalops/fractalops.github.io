@@ -15,12 +15,49 @@ permalink: /gpg/
 <script>
 function copyGpgFingerprint() {
   const fingerprint = '8813 0AB3 1372 3EAD 0E62  6D45 0C85 D00D 9D98 95BD';
-  navigator.clipboard.writeText(fingerprint).then(function() {
-    // Show feedback
-    const element = document.querySelector('.gpg-fingerprint');
-    const action = document.querySelector('.gpg-action');
-    const originalText = action.textContent;
+  const element = document.querySelector('.gpg-fingerprint');
+  const action = document.querySelector('.gpg-action');
+  const originalText = action.textContent;
 
+  // Try modern clipboard API first
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(fingerprint).then(function() {
+      showCopySuccess();
+    }).catch(function() {
+      fallbackCopy();
+    });
+  } else {
+    fallbackCopy();
+  }
+
+  function fallbackCopy() {
+    // Fallback for older browsers and mobile
+    const textArea = document.createElement('textarea');
+    textArea.value = fingerprint;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    textArea.setSelectionRange(0, 99999); // For mobile devices
+
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        showCopySuccess();
+      } else {
+        showCopyError();
+      }
+    } catch (err) {
+      showCopyError();
+    }
+
+    document.body.removeChild(textArea);
+  }
+
+  function showCopySuccess() {
     action.textContent = 'Copied!';
     element.classList.add('copied');
 
@@ -28,7 +65,17 @@ function copyGpgFingerprint() {
       action.textContent = originalText;
       element.classList.remove('copied');
     }, 2000);
-  });
+  }
+
+  function showCopyError() {
+    action.textContent = 'Copy failed';
+    element.classList.add('error');
+
+    setTimeout(function() {
+      action.textContent = originalText;
+      element.classList.remove('error');
+    }, 2000);
+  }
 }
 </script>
 
@@ -84,5 +131,48 @@ function copyGpgFingerprint() {
 
 .gpg-fingerprint.copied .gpg-action {
   color: var(--accent-green);
+}
+
+.gpg-fingerprint.error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+.gpg-fingerprint.error .gpg-action {
+  color: #ef4444;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  .gpg-fingerprint {
+    padding: 1.25rem;
+    gap: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .gpg-fingerprint code {
+    font-size: 0.75rem;
+    word-break: break-all;
+    line-height: 1.4;
+  }
+
+  .gpg-separator {
+    display: none;
+  }
+
+  .gpg-action {
+    font-size: 0.875rem;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .gpg-fingerprint:active {
+    transform: scale(0.98);
+  }
 }
 </style>
