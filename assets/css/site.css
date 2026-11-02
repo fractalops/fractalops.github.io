@@ -1,0 +1,179 @@
+/* A narrow, quiet layout: a small header, short pages, one line of links. */
+
+.wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* The type scale: 13px text, 12px secondary text, 15px headings. */
+.site-top {
+  padding: 28px 0 20px;
+}
+.brand {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.roles {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+.roles span {
+  white-space: nowrap;
+}
+
+.tabs {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 0;
+}
+.tabs-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+}
+.tabs a {
+  position: relative;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+}
+.tabs a:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+}
+.tabs a[aria-current="page"] {
+  color: var(--accent-blue);
+  background-color: var(--bg-tertiary);
+  font-weight: 600;
+}
+/* The dot of the current tab sits on the bottom border of the bar. */
+.tabs a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background-color: var(--accent-blue);
+}
+
+.page-content {
+  padding: 44px 0 40px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.page-heading {
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+.page-intro {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0 0 32px;
+  max-width: 34em;
+}
+
+.project {
+  padding: 28px 0;
+  border-top: 1px solid var(--border-color);
+}
+.project:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+.project h2 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+.project h2 a {
+  color: var(--text-primary);
+}
+.project p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0 0 12px;
+}
+/* The theme sets code blocks with !important, so a project block does too. */
+.project pre {
+  background: var(--code-bg) !important;
+  border: 1px solid var(--code-border) !important;
+  border-radius: 8px !important;
+  padding: 12px 14px !important;
+  overflow-x: auto;
+  font-size: 12px !important;
+  margin: 0 0 12px !important;
+}
+/* Inline code is plain text in the main text color, without the theme's box. */
+.project p code {
+  font-size: 12px;
+  color: var(--text-primary) !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.project .links,
+.footer-links {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.links a,
+.footer-links a {
+  color: var(--text-secondary);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 22px 0 40px;
+}
+.post-attribution {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin: 0 0 8px;
+}
+
+/* Blog entries use the same scale and spacing as project entries. */
+.blog-posts {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.blog-post-item {
+  margin: 0 !important;
+  padding: 0 0 24px !important;
+  border: none !important;
+  background: none !important;
+}
+.blog-post-item .post-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px !important;
+  margin: 0 0 4px !important;
+}
+.blog-post-item .post-title a {
+  color: var(--text-primary);
+}
+.blog-post-item .post-date {
+  font-size: 12px !important;
+  color: var(--text-muted);
+}
+.blog-post-item .post-excerpt {
+  font-size: 13px !important;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 6px 0 0 !important;
+}

@@ -7,15 +7,6 @@
 
     {%- include header.html -%}
     
-    <!-- Simple Navigation -->
-    <nav class="simple-nav" role="navigation" aria-label="Main navigation">
-      <div class="wrapper">
-        <div class="simple-nav-content">
-          <a href="{{ '/' | relative_url }}" class="simple-nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
-          <a href="{{ '/blog/' | relative_url }}" class="simple-nav-link {% if page.url contains '/blog' %}active{% endif %}">Blog</a>
-        </div>
-      </div>
-    </nav>
 
     <main class="page-content" id="main-content" aria-label="Content">
       <div class="wrapper">

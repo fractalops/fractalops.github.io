@@ -1,14 +1,15 @@
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
   <div class="wrapper">
-    <div class="footer-content">
-      {%- if page.layout == 'post' -%}
-        <p class="post-attribution">
-          posted by Mfundo • {{ page.date | date: "%b %-d, %Y" }}
-        </p>
-      {%- endif -%}
-    </div>
+    {%- if page.layout == 'post' -%}
+      <p class="post-attribution">posted by Mfundo · {{ page.date | date: "%b %-d, %Y" }}</p>
+    {%- endif -%}
+    <p class="footer-links">
+      <a href="https://github.com/fractalops">github</a> ·
+      <a href="https://www.linkedin.com/in/mfund0/">linkedin</a> ·
+      <a href="https://x.com/mfund0_">x</a> ·
+      <a href="https://medium.com/@mfundo">medium</a> ·
+      <a href="{{ '/gpg/' | relative_url }}">gpg</a>
+    </p>
   </div>
-
 </footer>

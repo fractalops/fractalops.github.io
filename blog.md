@@ -3,7 +3,8 @@ layout: default
 title: "Blog"
 permalink: /blog/
 ---
-<br>
+
+<h1 class="sr-only">Blog</h1>
 
 <div class="blog-posts">
   {% for post in site.posts %}
@@ -14,41 +15,18 @@ permalink: /blog/
         </h2>
         <time class="post-date">{{ post.date | date: "%B %d, %Y" }}</time>
       </div>
-      
       {% if post.excerpt %}
-        <p class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 25 }}
-          <a href="{{ post.url | relative_url }}" class="read-more-link">read more</a>
-        </p>
-      {% endif %}
-      
-      {% if post.tags.size > 0 %}
-        <div class="post-tags">
-          {% for tag in post.tags %}
-            <span class="post-tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
       {% endif %}
     </article>
   {% endfor %}
+  <article class="blog-post-item">
+    <div class="post-header">
+      <h2 class="post-title">
+        <a href="https://medium.com/@mfundo">Earlier articles on Medium</a>
+      </h2>
+      <span class="post-date">medium.com/@mfundo</span>
+    </div>
+    <p class="post-excerpt">Articles that I wrote before I started this blog.</p>
+  </article>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('blog-search');
-  const posts = document.querySelectorAll('.blog-post-item');
-  
-  searchInput.addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase();
-    
-    posts.forEach(post => {
-      const title = post.querySelector('.post-title').textContent.toLowerCase();
-      const excerpt = post.querySelector('.post-excerpt')?.textContent.toLowerCase() || '';
-      const tags = Array.from(post.querySelectorAll('.post-tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
-      
-      const matches = title.includes(searchTerm) || excerpt.includes(searchTerm) || tags.includes(searchTerm);
-      post.style.display = matches ? 'block' : 'none';
-    });
-  });
-});
-</script>

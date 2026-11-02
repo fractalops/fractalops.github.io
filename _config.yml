@@ -1,5 +1,5 @@
-title:       "mfundo.cloud"
-description: "Engineering insights from cloud infrastructure, system engineering, and software development"
+title:       "mfundo.wtf"
+description: "Infrastructure engineer in South Africa. Projects and notes."
 author:      "Mfundo"
 twitter_username: "mfundo"
 
@@ -45,7 +45,7 @@ header_pages:
   - index.md
   - blog.md
 
-url: "https://blog.mfundo.cloud"
+url: "https://mfundo.wtf"
 baseurl: ""
 
 # Giscus Comments Configuration
